@@ -25,8 +25,11 @@ const std::array<std::string, 17> Tokenizer::LanguageDelimiterTokens = {
 Tokenizer::Tokenizer(std::string FilePath) {
   InputFile.open(FilePath);
   if (!InputFile) {
-    std::cerr << "Could not open file: " << FilePath << std::endl;
-    exit(1);
+    std::ostringstream error;
+    error << "Could not open file: \"";
+    error << FilePath;
+    error << "\"";
+    throw error.str();
   }
 
   std::string line;
@@ -36,9 +39,11 @@ Tokenizer::Tokenizer(std::string FilePath) {
       i += 1;
       scanIn(line);
     }
-  } catch (std::string err) {
-    std::cerr << "Error [Line " << i << "] " << err << std::endl;
-    exit(1);
+  } catch (std::string internalError) {
+    std::ostringstream error;
+    error << "Error [Line " << i << "] ";
+    error << internalError;
+    throw error.str();
   }
 }
 
@@ -74,19 +79,20 @@ bool Tokenizer::isIdentifier(std::string Token) {
     }
 
     if (!isupper(c) && !isdigit(c)) {
-      std::string err = "Illegal identifier: \"";
-      err += Token;
-      err += "\" contains a non-uppercase, non-digit character.";
-      throw err;
+      std::ostringstream error;
+      error << "Illegal identifier: \"";
+      error << Token;
+      error << "\" contains a non-uppercase, non-digit character.";
+      throw error.str();
     }
   }
 
   if (Token.length() >= Tokenizer::IdentifierMaxLength) {
-    std::ostringstream err;
-    err << "Illegal identifier: \"" << Token << "\" has a length of ";
-    err << Token.length() << ". The length of an identifier can not exceed: ";
-    err << Tokenizer::IdentifierMaxLength << ".";
-    throw err.str();
+    std::ostringstream error;
+    error << "Illegal identifier: \"" << Token << "\" has a length of ";
+    error << Token.length() << ". The length of an identifier can not exceed: ";
+    error << Tokenizer::IdentifierMaxLength << ".";
+    throw error.str();
   }
 
   return true;
@@ -106,11 +112,11 @@ bool Tokenizer::isInteger(std::string Token) {
 
   // Do this check after we are sure it's a digit.
   if (Token.length() > Tokenizer::IntegerMaxLength) {
-    std::ostringstream err;
-    err << "Illegal unsigned integer: \"" << Token << "\" has a length of ";
-    err << Token.length() << ". The length of an integer can not exceed: ";
-    err << Tokenizer::IntegerMaxLength << ".";
-    throw err.str();
+    std::ostringstream error;
+    error << "Illegal unsigned integer: \"" << Token << "\" has a length of ";
+    error << Token.length() << ". The length of an integer can not exceed: ";
+    error << Tokenizer::IntegerMaxLength << ".";
+    throw error.str();
   }
 
   return true;
@@ -139,7 +145,11 @@ int Tokenizer::numberForToken(std::string Token) {
     return Tokenizer::EOFTokenRepresentation;
   }
 
-  throw "Unknown token: " + Token;
+  std::ostringstream error;
+  error << "Unknown token: \"";
+  error << Token;
+  error << "\"";
+  throw error.str();
 }
 
 void Tokenizer::add(std::string Token) {
