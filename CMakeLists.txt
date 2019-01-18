@@ -14,4 +14,4 @@ include_directories(include)
 file(GLOB SOURCES "lib/*.cpp")
 
 # Generate an executable named "Tokenizer"
-add_executable(Tokenizer "${CMAKE_CURRENT_SOURCE_DIR}/Tokenizer.cpp" ${SOURCES})
+add_executable(Tokenizer TokenizerMain.cpp ${SOURCES})
