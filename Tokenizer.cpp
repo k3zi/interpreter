@@ -14,4 +14,11 @@ int main(int argc, char** argv) {
     exit(1);
   }
   Tokenizer tokenizer (argv[argc - 1]);
+
+  while (!tokenizer.isEOF()) {
+    std::string token = tokenizer.currentToken();
+    int tokenNumber = tokenizer.numberForToken(token);
+    std::cout << tokenNumber << std::endl;
+    tokenizer.nextToken();
+  }
 }
