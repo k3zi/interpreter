@@ -13,6 +13,7 @@ int main(int argc, char** argv) {
     std::cerr << "Please specify a file name." << std::endl;
     exit(1);
   }
+
   try {
     Tokenizer tokenizer (argv[argc - 1]);
     while (!tokenizer.isEOF()) {
