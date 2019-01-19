@@ -6,7 +6,7 @@
 //===----------------------------------------------------------------------===//
 
 #include "Tokenizer.h"
-#include <iostream>
+#include <iostream> // std::cerr, std::endl
 
 int main(int argc, char** argv) {
   if (argc <= 1) {
@@ -14,15 +14,23 @@ int main(int argc, char** argv) {
     exit(1);
   }
 
+  unsigned lineNumber = 0;
   try {
     Tokenizer tokenizer (argv[argc - 1]);
+
     while (!tokenizer.isEOF()) {
-      std::string token = tokenizer.currentToken();
-      int tokenNumber = tokenizer.numberForToken(token);
-      std::cout << tokenNumber << std::endl;
+      lineNumber = tokenizer.lineNumber();
       tokenizer.nextToken();
+      // std::string token = tokenizer.currentToken();
+      int tokenNumber = tokenizer.currentTokenNumber();
+      std::cout << tokenNumber << std::endl;
+      lineNumber = tokenizer.lineNumber();
     }
   } catch (std::string error) {
-    std::cerr << error << std::endl;
+    if (lineNumber) {
+      std::cerr << "Error [Line " << lineNumber << "] " << error << std::endl;
+    } else {
+      std::cerr << error << std::endl;
+    }
   }
 }

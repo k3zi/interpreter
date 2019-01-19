@@ -5,40 +5,35 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include <fstream>
-#include <string>
-#include <vector>
-#include <array>
+#include <fstream> // std::ifstream
+
+class Token;
 
 class Tokenizer {
+
 private:
-  static const std::string Delimiter;
-  static const std::array<std::string, 13> LanguageKeywordTokens;
-  static const std::array<std::string, 17> LanguageDelimiterTokens;
-  static const int IntegerTokenRepresentation = 31;
-  static const int IdentifierTokenRepresentation = 32;
-  static const int EOFTokenRepresentation = 33;
   static const int IdentifierMaxLength = 8;
   static const int IntegerMaxLength = 8;
 
-  std::vector <std::string> Tokens;
-  int CurrentTokenPosition = 0;
-  std::ifstream InputFile;
+  Token *CurrentToken;
+  std::ifstream FileStream;
+  unsigned LineNumber = 1;
 
-  void scanIn(std::string Input);
-  std::string findLongestDelimiterTokenAt(std::string Input, size_t Position);
-
-  bool isValid(std::string Token);
-  bool isIdentifier(std::string Token);
-  bool isInteger(std::string Token);
-  void add(std::string Token);
+  void nextIdentifier(std::string tokenString);
+  void nextReservedToken(std::string tokenString);
+  void nextInteger(std::string tokenString);
 
 public:
   Tokenizer (std::string FilePath);
-  virtual ~Tokenizer () {};
+  virtual ~Tokenizer () {
+    if (FileStream.is_open())
+      FileStream.close();
+  };
+
+  unsigned lineNumber() const { return LineNumber; };
 
   std::string currentToken();
   void nextToken();
-  int numberForToken(std::string Token);
+  int currentTokenNumber();
   bool isEOF();
 };
