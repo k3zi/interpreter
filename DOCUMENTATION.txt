@@ -1,0 +1,131 @@
+Overall Design:
+  This tokenizer essentially:
+    1. Loads source file by passing file name to `Tokenizer` constructor.
+    2. Upon user calling `nextToken` fetches the next token:
+      i. Reads one or more (if needed) characters from the file stream.
+      ii. If the character denotes a symbol sets the current token to the type
+        of symbol and a the string covered by the token in the source file.
+      iii. If the character is alphanumeric the class will classify it by:
+        - Lowercase -> `nextReservedToken` (since reserved tokens are the only
+            tokens that start with a lowercase character)
+        - Uppercase -> `nextIdentifier` (since identifier tokens are the only
+            tokens that start with an uppercase character)
+        - Numeric -> `nextInteger` (since numeric tokens are the only
+            tokens that start with a numeric character)
+      ix. If the character hasn't matched and is not whitespace, newline, or
+        and end-of-file the tokenizer will throw an error.
+      x. `nextReservedToken` / `nextIdentifier` / `nextInteger` process the
+        file stream until all consecutive alphanumeric characters are consumed.
+        These functions will throw any errors for tokens that are invalid in
+        the CORE language (Ex: Integer/Identifier length greater than 8).
+    3. Uses the `currentToken` getter to fetch the most recently consumed
+      token.
+    4. Uses the `currentTokenType` to capture the number representation of
+      all the tokens from the source file. If the source file was erroneous,
+      the code will not output the number representation and an error will
+      instead be outputted. If the tokenizer was successful in reading all
+      tokens, the number representation will be printed to the program's
+      output.
+
+Class Structure:
+  - Token.h:
+    - TokenType (enum): This enum list is organized by the predetermined
+      numbering of tokens. I.e: program, begin, end...
+    - Token (class): A class for holding token information.
+      - Private Members:
+        - Type (TokenType): The type of token the `Data` represents.
+        - Data (std::string): The underlying data behind the token.
+        - LineNumber (int): The line number of this token.
+        - ColumnNumber (int): The column number of this token.
+      - Public Members:
+        - `Constructor` (Token): Creates an empty token.
+        -  Getters for various members (defined above):
+          - getType (() -> TokenType)
+          - getData (() -> std::string)
+          - getLineNumber (() -> unsigned)
+          - getColumnNumber (() -> unsigned)
+        - setToken((TokenType, std::string) -> void): Just a simple setter for
+          the token properties.
+        - setLocation((unsigned L, unsigned C) -> void): Just a simple setter
+          for the token's location in the source file. L = line number; C =
+          column number.
+  - Tokenizer.h/cpp:
+    - Static Private Members:
+      - IdentifierMaxLength (static const unsigned): The maximum length of a
+        valid identifier in CORE.
+      - IntegerMaxLength (static const unsigned): The maximum length of a valid
+        integer in CORE.
+    - Private Members:
+      - CurrentToken (Token): The most recent token. Upon initialization this
+        is the undefined token type: `TokenType::undefined`.
+      - FileStream (std::ifstream): The file stream to be opened upon
+        initialization and closed on destruction.
+      - LineNumber (unsigned): The line number that the tokenizer is
+        processing. Incremented on line breaks. Line 1 is considered the first
+        line. Counting starts from 1. Not 0.
+      - ColumnNumber (unsigned): The column number that the tokenizer is
+        processing. Resets on line breaks. Incremenets on character
+        consumption. Column 1 is considered the first column. Counting starts
+        from 1. Not 0.
+      - nextIdentifier ((std::string) -> unsigned): Processes the next
+        identifier token from the file stream. The passed in `tokenString`
+        must contain a single uppercase character. This function processes up
+        to (but not including) a character that is non-alphanumeric. Identifier
+        Format = [A-Z]+[0-9]*
+        This function will throw if:
+          - Any of the characters after the initial character are non-uppercase
+            Ex: ABc123.
+          - Any of the characters after the initial character and all uppercase
+            characters are non-digits. Ex: ABC123X.
+          - The resulting identifier exceeds `IdentifierMaxLength`
+        Returns: The number of characters consumed. AKA The resultant token's
+          ength.
+      - nextReservedToken ((std::string) -> unsigned): Processes the next
+        reserved token from the file stream. The passed in `tokenString` must
+        contain a single lowercase character. Reserved Token Format = [a-z]+
+        and must match one of the predefined tokens. This function will throw
+        if:
+          - Any of the characters after the initial character are non-lowercase
+            Ex: ABc123.
+          - The result matches none of the languages identifiers.
+        Returns: The number of characters consumed. AKA The resultant
+          token's length.
+      - nextInteger ((std::string) -> unsigned): Processes the next integer
+        token from the file stream. The passed in `tokenString` must contain a
+        single numeric character. This function processes up to (but not
+        including) a character that is non-alphanumeric.
+        Identifier Format = [0-9]+
+        This function will throw if:
+          - Any of the characters after the initial character are non-numeric
+            Ex: 123c, 123ABC, 1x4, 45e8.
+          - The resulting identifier exceeds `IntegerMaxLength`.
+        Returns: The number of characters consumed. AKA The resultant
+          token's length.
+      - consumeToken (() -> void): Internal method that retrieves the next
+        token from the file stream. Is called by public member `nextToken` and
+        utilises: `nextIdentifier`, `nextInteger`, and `nextIdentifier`.
+    - Public Members
+      - `Constructor` ((std::string) -> Tokenizer): The only constructor for
+        the Tokenizer. Takes in a file path to a CORE source file and opens a
+        file stream with the initial token set to an undefined token.
+      - `Destructor` (() -> virtual): Destructor just closes the file stream.
+      - lineNumber (() -> unsigned): Returns the current line number of the
+        scanner.
+      - columnNumber (() -> unsigned): Returns the current line number of the
+        scanner.
+      - currentToken (() -> std::string): Getter for the current token.
+      - nextToken (() -> void): Retrieves the next token from the file stream.
+        That token can then subsequently be read by calling
+        `Tokenizer::currentToken`. Handles error outputing (specifically line
+        numbers).
+      - currentTokenType (() -> int): The `int` representation of the token
+        type discovered at the current token.
+      - isEOF (() -> bool): Whether the tokenizer (and file stream) has reached
+        the end of token output. End of file.
+
+Testing / Bugs:
+  - Code was tested batch running against various valid and invalid CORE files
+    and comparing the output to manual calculations of the resultant token
+    number stream; ensuring that code that was erroneous failed to produce a
+    token stream and halted with a reasonable error description.
+  - As of this latest version no outsanding bugs are presenet.
