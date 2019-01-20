@@ -6,7 +6,6 @@
 //===---------------------------------------------------------------------===//
 
 #include "Tokenizer.h"
-#include "Token.h"
 #include <sstream> // std::ostringstream
 #include <cstdio> // EOF (constant)
 #include <cassert> // assert
@@ -14,36 +13,27 @@
 // Tokenizer constructor. Pass in  a file path to a CORE code file.
 Tokenizer::Tokenizer(std::string FilePath) {
   // Open up the input file stream.
-  FileStream.open(FilePath);
+  FileStream.open(FilePath.c_str());
 
   // Throw error if stream could not be opened.
   if (!FileStream) {
     std::ostringstream error;
     error << "Could not open file: \"";
     error << FilePath;
-    error << "\"";
+    error << "\".";
     throw error.str();
   }
 
   // Setup token to an undefined state.
-  CurrentToken = new Token();
-  CurrentToken->setToken(TokenType::undefined, "");
-}
-
-// Underlying data from token.
-std::string Tokenizer::currentToken() {
-  return CurrentToken->getData();
-}
-
-// Conventional enums may be implicitly returned as integers.
-int Tokenizer::currentTokenType() {
-  return CurrentToken->getType();
+  CurrentToken = Token();
+  CurrentToken.setToken(TokenType::undefined, "");
+  CurrentToken.setLocation(LineNumber, ColumnNumber);
 }
 
 // Just a wrapper for `consumeToken` that adds some error information into
 // the error it will re-throw.
 void Tokenizer::nextToken() {
-  assert(currentTokenType() != TokenType::eof && "End of token stream.");
+  assert(CurrentToken.getType() != TokenType::eof && "End of token stream.");
 
   try {
     consumeToken();
@@ -87,7 +77,7 @@ void Tokenizer::consumeToken() {
         charactersHandled = nextInteger(tokenString);
       }
 
-      CurrentToken->setLocation(LineNumber, ColumnNumber);
+      CurrentToken.setLocation(LineNumber, ColumnNumber);
 
       // If any of the above functions finished successfully
       // `charactersHandled` should have a value > 0. Otherwise there would be
@@ -108,8 +98,8 @@ void Tokenizer::consumeToken() {
     case '\t': case ' ': case EOF:
       if (isEOF()) {
         // In the case of reaching EOF we just need to send the last token.
-        CurrentToken->setToken(TokenType::eof, "eof");
-        CurrentToken->setLocation(LineNumber, ColumnNumber);
+        CurrentToken.setToken(TokenType::eof, "eof");
+        CurrentToken.setLocation(LineNumber, ColumnNumber);
         return;
       } else {
         ColumnNumber += 1;
@@ -162,8 +152,8 @@ void Tokenizer::consumeToken() {
     }
 
     if (type != TokenType::undefined) {
-      CurrentToken->setToken(type, tokenString);
-      CurrentToken->setLocation(LineNumber, ColumnNumber);
+      CurrentToken.setToken(type, tokenString);
+      CurrentToken.setLocation(LineNumber, ColumnNumber);
       ColumnNumber += tokenString.size();
       return;
     }
@@ -224,7 +214,7 @@ unsigned Tokenizer::nextIdentifier(std::string tokenString) {
     throw error.str();
   }
 
-  CurrentToken->setToken(TokenType::identifier, tokenString);
+  CurrentToken.setToken(TokenType::identifier, tokenString);
   return tokenString.size();
 }
 
@@ -274,7 +264,7 @@ unsigned Tokenizer::nextReservedToken(std::string tokenString) {
     throw error.str();
   }
 
-  CurrentToken->setToken(type, tokenString);
+  CurrentToken.setToken(type, tokenString);
   return tokenString.size();
 }
 
@@ -314,6 +304,6 @@ unsigned Tokenizer::nextInteger(std::string tokenString) {
     throw error.str();
   }
 
-  CurrentToken->setToken(TokenType::integer, tokenString);
+  CurrentToken.setToken(TokenType::integer, tokenString);
   return tokenString.size();
 }

@@ -20,8 +20,8 @@ Overall Design:
         the CORE language (Ex: Integer/Identifier length greater than 8).
     3. Uses the `currentToken` getter to fetch the most recently consumed
       token.
-    4. Uses the `currentTokenType` to capture the number representation of
-      all the tokens from the source file. If the source file was erroneous,
+    4. Uses `Token->getType()` to capture the number representation of all the
+      tokens from the source file. If the source file was erroneous,
       the code will not output the number representation and an error will
       instead be outputted. If the tokenizer was successful in reading all
       tokens, the number representation will be printed to the program's
@@ -113,13 +113,11 @@ Class Structure:
         scanner.
       - columnNumber (() -> unsigned): Returns the current line number of the
         scanner.
-      - currentToken (() -> std::string): Getter for the current token.
+      - currentToken (() -> Token): Getter for the current token.
       - nextToken (() -> void): Retrieves the next token from the file stream.
         That token can then subsequently be read by calling
         `Tokenizer::currentToken`. Handles error outputing (specifically line
         numbers).
-      - currentTokenType (() -> int): The `int` representation of the token
-        type discovered at the current token.
       - isEOF (() -> bool): Whether the tokenizer (and file stream) has reached
         the end of token output. End of file.
 
