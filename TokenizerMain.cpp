@@ -8,12 +8,13 @@
 #include "Tokenizer.h"
 #include <iostream> // std::cerr, std::endl
 #include <sstream> // std::ostringstream
+#include <cstdlib> // std::exit
 
 int main(int argc, char** argv) {
   // Second argument [1] should be the name of the file.
   if (argc <= 1) {
     std::cerr << "Please specify a file name." << std::endl;
-    exit(1);
+    std::exit(1);
   }
 
   try {

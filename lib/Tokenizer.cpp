@@ -9,6 +9,7 @@
 #include "Token.h"
 #include <sstream> // std::ostringstream
 #include <cstdio> // EOF (constant)
+#include <cassert> // assert
 
 // Tokenizer constructor. Pass in  a file path to a CORE code file.
 Tokenizer::Tokenizer(std::string FilePath) {
