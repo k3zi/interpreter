@@ -215,7 +215,7 @@ unsigned Tokenizer::nextIdentifier(std::string tokenString) {
   }
 
   // Must not exceed `IdentifierMaxLength`.
-  if (tokenString.length() >= Tokenizer::IdentifierMaxLength) {
+  if (tokenString.length() > Tokenizer::IdentifierMaxLength) {
     std::ostringstream error;
     error << "Illegal identifier: \"" << tokenString << "\". Has a length of ";
     error << tokenString.length() << ". The length of an identifier may not ";
@@ -305,7 +305,7 @@ unsigned Tokenizer::nextInteger(std::string tokenString) {
   }
 
   // Integer can not exceed `IntegerMaxLength` characters.
-  if (tokenString.length() >= Tokenizer::IntegerMaxLength) {
+  if (tokenString.length() > Tokenizer::IntegerMaxLength) {
     std::ostringstream error;
     error << "Illegal integer: \"" << tokenString << "\". Has a length of ";
     error << tokenString.length() << ". The length of an integer may not ";
