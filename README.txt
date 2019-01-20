@@ -22,5 +22,5 @@ Compilation:
   2. Run `make` to build the `Tokenizer` executable.
 
 Execution:
-  3. Use the executable as such: `./Tokenizer testFile.core`, passing in a CORE
+  1. Use the executable as such: `./Tokenizer testFile.core`, passing in a CORE
     language source file.
