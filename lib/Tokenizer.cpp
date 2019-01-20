@@ -170,7 +170,8 @@ void Tokenizer::consumeToken() {
   }
 }
 
-// Identifier = /[A-Z]+[0-9]*/ where the entire length is 8.
+// Identifier = /[A-Z]+[0-9]*/ where the entire length doesn't exceed
+// `IdentifierMaxLength`.
 unsigned Tokenizer::nextIdentifier(std::string tokenString) {
   assert(tokenString.size() == 1 && isupper(tokenString.at(0))
     && "Start of identifier expected to be a single uppercase character.");
@@ -277,8 +278,8 @@ unsigned Tokenizer::nextReservedToken(std::string tokenString) {
   return tokenString.size();
 }
 
-// Identifier = /[0-9]+/ where the entire length does not exceed
-// `IdentifierMaxLength`.
+// Identifier = /[0-9]+/ where the entire length doesn't exceed
+// `IntegerMaxLength`.
 unsigned Tokenizer::nextInteger(std::string tokenString) {
   assert(isdigit(tokenString.at(0))
     && "Start of integer expected to be digit.");
