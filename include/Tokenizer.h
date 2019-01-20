@@ -8,8 +8,7 @@
 //===---------------------------------------------------------------------===//
 
 #include <fstream> // std::ifstream
-
-class Token; // Forward declare the Token class.
+#include "Token.h"
 
 // The Tokenizer class header.
 class Tokenizer {
@@ -22,7 +21,7 @@ class Tokenizer {
 
   // The most recent token. Upon initialization this is the undefined token
   // type: `TokenType::undefined`.
-  Token *CurrentToken;
+  Token CurrentToken;
 
   // The file stream to be opened upon initialization and closed on
   // destruction.
@@ -101,16 +100,14 @@ public:
   unsigned columnNumber() const { return ColumnNumber; };
 
   // Getter for the current token.
-  std::string currentToken();
+  Token currentToken() {
+    return CurrentToken;
+  }
 
   // Retrieves the next token from the file stream. That token can then
   // subsequently be read by calling `Tokenizer::currentToken`. Handles error
   // outputing (specifically line numbers).
   void nextToken();
-
-  // The `int` representation of the token type discovered at the current
-  // token.
-  int currentTokenType();
 
   // Whether the tokenizer (and file stream) has reached the end of token
   // output. End of file.

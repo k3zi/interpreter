@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
 
     while (!tokenizer.isEOF()) {
       tokenizer.nextToken();
-      output << tokenizer.currentTokenType() << std::endl;
+      output << tokenizer.currentToken().getType() << std::endl;
     }
 
     // Now, output all lines of token numbers.
