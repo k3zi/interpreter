@@ -25,7 +25,7 @@ enum TokenType {
   // - Brackets 18 - 20
   l_square_bracket, r_square_bracket, l_round_bracket, r_round_bracket,
 
-  // - Operations 22 - 24
+  // - Operations 21 - 24
   plus, minus, star,
 
   // - Comparison 25 - 30
