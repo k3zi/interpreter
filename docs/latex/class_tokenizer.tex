@@ -1,0 +1,85 @@
+\hypertarget{class_tokenizer}{}\section{Tokenizer Class Reference}
+\label{class_tokenizer}\index{Tokenizer@{Tokenizer}}
+
+
+The \mbox{\hyperlink{class_tokenizer}{Tokenizer}} for the C\+O\+RE language.  
+
+
+
+
+{\ttfamily \#include $<$Tokenizer.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_tokenizer_af020d45782d1521b3e5ee4a9cd7acebd}\label{class_tokenizer_af020d45782d1521b3e5ee4a9cd7acebd}} 
+unsigned \mbox{\hyperlink{class_tokenizer_af020d45782d1521b3e5ee4a9cd7acebd}{line\+Number}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current line number of the scanner. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_tokenizer_a02593818a4c3b60db4d2425e2b0aa697}\label{class_tokenizer_a02593818a4c3b60db4d2425e2b0aa697}} 
+unsigned \mbox{\hyperlink{class_tokenizer_a02593818a4c3b60db4d2425e2b0aa697}{column\+Number}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current line number of the scanner. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_tokenizer_ab1963dc9bf28086609425b8ff44bf6e3}\label{class_tokenizer_ab1963dc9bf28086609425b8ff44bf6e3}} 
+\mbox{\hyperlink{class_token}{Token}} \mbox{\hyperlink{class_tokenizer_ab1963dc9bf28086609425b8ff44bf6e3}{current\+Token}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the current token. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tokenizer_aa11b05ea9caa12ea7aa0dfc7f24fa21c}{Next\+Token}} ()
+\item 
+\mbox{\Hypertarget{class_tokenizer_aa46f97aad1d509fe3d6239d9685d1aa8}\label{class_tokenizer_aa46f97aad1d509fe3d6239d9685d1aa8}} 
+bool {\bfseries is\+E\+OF} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_tokenizer}{Tokenizer}} $\ast$ \mbox{\hyperlink{class_tokenizer_a94b93d58b0ae1c3bb4a252e1322ffeff}{Create\+From\+File}} (std\+::string File\+Path)
+\item 
+static \mbox{\hyperlink{class_tokenizer}{Tokenizer}} $\ast$ \mbox{\hyperlink{class_tokenizer_a006144123a37d29a6100c57ea21cde15}{Create\+From\+String}} (std\+::string String)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_tokenizer}{Tokenizer}} for the C\+O\+RE language. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_tokenizer_a94b93d58b0ae1c3bb4a252e1322ffeff}\label{class_tokenizer_a94b93d58b0ae1c3bb4a252e1322ffeff}} 
+\index{Tokenizer@{Tokenizer}!CreateFromFile@{CreateFromFile}}
+\index{CreateFromFile@{CreateFromFile}!Tokenizer@{Tokenizer}}
+\subsubsection{\texorpdfstring{CreateFromFile()}{CreateFromFile()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_tokenizer}{Tokenizer}}$\ast$ Tokenizer\+::\+Create\+From\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{File\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Constructs a tokenizer for a source file at a specifc path. 
+\begin{DoxyParams}{Parameters}
+{\em File\+Path} & an accessible file path to a C\+O\+RE source file \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em caller} & must handle any exceptions from opening a std\+::ifstream. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+a new \mbox{\hyperlink{class_tokenizer}{Tokenizer}} with any empty current token. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tokenizer_a006144123a37d29a6100c57ea21cde15}\label{class_tokenizer_a006144123a37d29a6100c57ea21cde15}} 
+\index{Tokenizer@{Tokenizer}!CreateFromString@{CreateFromString}}
+\index{CreateFromString@{CreateFromString}!Tokenizer@{Tokenizer}}
+\subsubsection{\texorpdfstring{CreateFromString()}{CreateFromString()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_tokenizer}{Tokenizer}}$\ast$ Tokenizer\+::\+Create\+From\+String (\begin{DoxyParamCaption}\item[{std\+::string}]{String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Constructs a tokenizer for a given in-\/memory string. 
+\begin{DoxyParams}{Parameters}
+{\em String} & a string containng a C\+O\+RE language translation unit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a new \mbox{\hyperlink{class_tokenizer}{Tokenizer}} with any empty current token. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tokenizer_aa11b05ea9caa12ea7aa0dfc7f24fa21c}\label{class_tokenizer_aa11b05ea9caa12ea7aa0dfc7f24fa21c}} 
+\index{Tokenizer@{Tokenizer}!NextToken@{NextToken}}
+\index{NextToken@{NextToken}!Tokenizer@{Tokenizer}}
+\subsubsection{\texorpdfstring{NextToken()}{NextToken()}}
+{\footnotesize\ttfamily void Tokenizer\+::\+Next\+Token (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retrieves the next token from the file stream. That token can then subsequently be read by calling {\ttfamily \mbox{\hyperlink{class_tokenizer_ab1963dc9bf28086609425b8ff44bf6e3}{Tokenizer\+::current\+Token}}}. Handles error outputing (specifically line numbers). 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+Tokenizer/Tokenizer.\+h\end{DoxyCompactItemize}

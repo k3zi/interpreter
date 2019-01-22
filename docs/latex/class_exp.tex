@@ -1,0 +1,87 @@
+\hypertarget{class_exp}{}\section{Exp Class Reference}
+\label{class_exp}\index{Exp@{Exp}}
+
+
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$exp$>$} in C\+O\+RE.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for Exp\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_exp}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_exp_a40455fa62d359a4c7c165bd23590c8f6}\label{class_exp_a40455fa62d359a4c7c165bd23590c8f6}} 
+int {\bfseries get\+Value} () const
+\item 
+\mbox{\Hypertarget{class_exp_ab245e9c5ed4d8e299f6a4d3c66ff5bd9}\label{class_exp_ab245e9c5ed4d8e299f6a4d3c66ff5bd9}} 
+{\bfseries Exp} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context, bool Splits\+Context)
+\item 
+\mbox{\Hypertarget{class_exp_a62124ce532ac3be34ee2a6f10dda35f0}\label{class_exp_a62124ce532ac3be34ee2a6f10dda35f0}} 
+{\bfseries Exp} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context)
+\item 
+void \mbox{\hyperlink{class_exp_a1f5a3ad89d1aa43c746768d813582f39}{Print}} (std\+::ostringstream \&X, unsigned Indent) override
+\item 
+void \mbox{\hyperlink{class_exp_adceca06dcf880f8ad1008774f0bda91d}{Execute}} (\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&C) override
+\item 
+\mbox{\Hypertarget{class_exp_a1daf5b30acd2e6d22aaa1f7ddc64ba37}\label{class_exp_a1daf5b30acd2e6d22aaa1f7ddc64ba37}} 
+\mbox{\hyperlink{class_token}{Token}} {\bfseries get\+Token} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_exp_a811b91b819c90648fe4787147390d5d6}\label{class_exp_a811b91b819c90648fe4787147390d5d6}} 
+static bool {\bfseries can\+Parse} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$exp$>$} in C\+O\+RE. 
+
+The value of an expression to be properly set after it is interpreted. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_exp_adceca06dcf880f8ad1008774f0bda91d}\label{class_exp_adceca06dcf880f8ad1008774f0bda91d}} 
+\index{Exp@{Exp}!Execute@{Execute}}
+\index{Execute@{Execute}!Exp@{Exp}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void Exp\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes / evaluates the node. 
+\begin{DoxyParams}{Parameters}
+{\em C} & the context against which the node will execute / evaluate for. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a27ad1ba81d2596817b361368282bcbfa}{Node}}.
+
+\mbox{\Hypertarget{class_exp_a1f5a3ad89d1aa43c746768d813582f39}\label{class_exp_a1f5a3ad89d1aa43c746768d813582f39}} 
+\index{Exp@{Exp}!Print@{Print}}
+\index{Print@{Print}!Exp@{Exp}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Exp\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostringstream \&}]{X,  }\item[{unsigned}]{Indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pretty print the node back to the source language. 
+\begin{DoxyParams}{Parameters}
+{\em X} & the stream which to append to. \\
+\hline
+{\em Indent} & the level of indent to print at in the stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a5325b760a6e6fe94227c0cff53af2c45}{Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/Node.\+h\end{DoxyCompactItemize}

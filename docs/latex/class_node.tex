@@ -1,0 +1,67 @@
+\hypertarget{class_node}{}\section{Node Class Reference}
+\label{class_node}\index{Node@{Node}}
+
+
+A generic node of the \mbox{\hyperlink{class_a_s_t}{A\+ST}}. Subclasses need to override the virtual methods.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_node}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_node_a5325b760a6e6fe94227c0cff53af2c45}{Print}} (std\+::ostringstream \&X, unsigned Indent)
+\item 
+virtual void \mbox{\hyperlink{class_node_a27ad1ba81d2596817b361368282bcbfa}{Execute}} (\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&C)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A generic node of the \mbox{\hyperlink{class_a_s_t}{A\+ST}}. Subclasses need to override the virtual methods. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_node_a27ad1ba81d2596817b361368282bcbfa}\label{class_node_a27ad1ba81d2596817b361368282bcbfa}} 
+\index{Node@{Node}!Execute@{Execute}}
+\index{Execute@{Execute}!Node@{Node}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily virtual void Node\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Executes / evaluates the node. 
+\begin{DoxyParams}{Parameters}
+{\em C} & the context against which the node will execute / evaluate for. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_loop_aaf0a44c940844b8ac4ac521dbb703f9a}{Loop}}, \mbox{\hyperlink{class_assign_a1803b147539aa47e431adc87c171a252}{Assign}}, \mbox{\hyperlink{class_out_a4ffa25656789ae40127a2f06d6e36207}{Out}}, \mbox{\hyperlink{class_in_afb7785ea5139aea43adad662a1efc4c9}{In}}, \mbox{\hyperlink{class_if_a930c6955a625beebaa3e61527aacfa39}{If}}, \mbox{\hyperlink{class_cond_ae5e176f4872c49912bc792367f4dff80}{Cond}}, \mbox{\hyperlink{class_comp_a3f6905eb5b4ed784a458070315fee5a1}{Comp}}, \mbox{\hyperlink{class_exp_adceca06dcf880f8ad1008774f0bda91d}{Exp}}, \mbox{\hyperlink{class_term_aca584601256c9ccb79b5936907b7bf30}{Term}}, \mbox{\hyperlink{class_fac_a9448c1c51e8f79edce0ac7c7cda21c58}{Fac}}, \mbox{\hyperlink{class_prog_afd95e341f8003d6b5fe6369af3b8975b}{Prog}}, \mbox{\hyperlink{class_stmt_seq_a7ed19a3d07348f0dab9f35861aa49382}{Stmt\+Seq}}, \mbox{\hyperlink{class_stmt_a25f70d265d704c43b99d20442470bb71}{Stmt}}, \mbox{\hyperlink{class_decl_seq_acf5b28c6f7705ec9dc5d587ad5edf9da}{Decl\+Seq}}, \mbox{\hyperlink{class_decl_a6ac3129b12248807b15edc3377cb448f}{Decl}}, \mbox{\hyperlink{class_id_list_a9de286be5a5a810ae4cd77df0bd6517f}{Id\+List}}, and \mbox{\hyperlink{class_id_a3fc54b723e5c48d0f575e08b4e54caef}{Id}}.
+
+\mbox{\Hypertarget{class_node_a5325b760a6e6fe94227c0cff53af2c45}\label{class_node_a5325b760a6e6fe94227c0cff53af2c45}} 
+\index{Node@{Node}!Print@{Print}}
+\index{Print@{Print}!Node@{Node}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily virtual void Node\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostringstream \&}]{X,  }\item[{unsigned}]{Indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Pretty print the node back to the source language. 
+\begin{DoxyParams}{Parameters}
+{\em X} & the stream which to append to. \\
+\hline
+{\em Indent} & the level of indent to print at in the stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_loop_aa2907209a033f57b7ca8bbee857b2bfe}{Loop}}, \mbox{\hyperlink{class_assign_a1739f537e350e577898ae2447f928e4a}{Assign}}, \mbox{\hyperlink{class_out_a3aefc50458c5e3f05e3e7419c93c8eb5}{Out}}, \mbox{\hyperlink{class_in_a309553a9aa17740ec97c110d8697e0a6}{In}}, \mbox{\hyperlink{class_if_a3a58cc0b16902cc935c9edce7fc70ff6}{If}}, \mbox{\hyperlink{class_cond_acb604011c472b21934e134c07f3cf0c1}{Cond}}, \mbox{\hyperlink{class_comp_abc0e0fdd3a8963d5d60017c38765d0b4}{Comp}}, \mbox{\hyperlink{class_exp_a1f5a3ad89d1aa43c746768d813582f39}{Exp}}, \mbox{\hyperlink{class_term_a36f292dd7bd0d04cb97ca97afd476fc7}{Term}}, \mbox{\hyperlink{class_fac_abf645b3e9acdc88dd83ed3dacf981c58}{Fac}}, \mbox{\hyperlink{class_prog_aadfb046d4096b256eea11e3171b8d399}{Prog}}, \mbox{\hyperlink{class_stmt_seq_aa9044b5fc51430f8da4d62b8c0beb8e7}{Stmt\+Seq}}, \mbox{\hyperlink{class_stmt_a7d29a5e877b3fa073d3c2e9da3effb27}{Stmt}}, \mbox{\hyperlink{class_decl_seq_a028dc9916d5ab8369117d90b9e7af7f8}{Decl\+Seq}}, \mbox{\hyperlink{class_decl_a2cd337f551b0a66d6787816c0a4a907a}{Decl}}, \mbox{\hyperlink{class_id_list_a1e2cd3692c956de8cebb88ffcaf0242f}{Id\+List}}, and \mbox{\hyperlink{class_id_a79e18030494873748efcaf6ea530a35f}{Id}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/Node.\+h\end{DoxyCompactItemize}

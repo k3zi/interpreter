@@ -1,0 +1,59 @@
+\hypertarget{class_a_s_t}{}\section{A\+ST Class Reference}
+\label{class_a_s_t}\index{AST@{AST}}
+
+
+An abstract syntax tree for the C\+O\+RE language.  
+
+
+
+
+{\ttfamily \#include $<$A\+S\+T.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_s_t_afd378ca7cb3049d6293e8597d31d758d}\label{class_a_s_t_afd378ca7cb3049d6293e8597d31d758d}} 
+\mbox{\hyperlink{class_a_s_t_afd378ca7cb3049d6293e8597d31d758d}{A\+ST}} ()
+\begin{DoxyCompactList}\small\item\em A constructor for an empty abstract syntax tree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_s_t_ad332977af5d4ea0ec793c4843544b6e2}\label{class_a_s_t_ad332977af5d4ea0ec793c4843544b6e2}} 
+\mbox{\hyperlink{class_a_s_t_ad332977af5d4ea0ec793c4843544b6e2}{$\sim$\+A\+ST}} ()
+\begin{DoxyCompactList}\small\item\em A deconstructor that should handle deleting the tree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_s_t_af22650d6f184012dd1bdf526e3322ca6}\label{class_a_s_t_af22650d6f184012dd1bdf526e3322ca6}} 
+void \mbox{\hyperlink{class_a_s_t_af22650d6f184012dd1bdf526e3322ca6}{Print}} ()
+\begin{DoxyCompactList}\small\item\em Prints the \mbox{\hyperlink{class_a_s_t}{A\+ST}} to std\+::cout. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_s_t_aa9fc06bb6400bee9f91a2f02c367ba88}\label{class_a_s_t_aa9fc06bb6400bee9f91a2f02c367ba88}} 
+void \mbox{\hyperlink{class_a_s_t_aa9fc06bb6400bee9f91a2f02c367ba88}{Print}} (std\+::ostringstream \&X)
+\begin{DoxyCompactList}\small\item\em Prints the \mbox{\hyperlink{class_a_s_t}{A\+ST}} to the passed in string stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_s_t_add81dbf0bbcd986b5fef53f641865462}{Execute}} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_a_s_t_ab80291af9c262f63b83fa9c16f12014d}{Parser}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An abstract syntax tree for the C\+O\+RE language. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_s_t_add81dbf0bbcd986b5fef53f641865462}\label{class_a_s_t_add81dbf0bbcd986b5fef53f641865462}} 
+\index{AST@{AST}!Execute@{Execute}}
+\index{Execute@{Execute}!AST@{AST}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void A\+S\+T\+::\+Execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Executes the \mbox{\hyperlink{class_a_s_t}{A\+ST}} using std\+::cin for user input and std\+::cout for any output. 
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_a_s_t_ab80291af9c262f63b83fa9c16f12014d}\label{class_a_s_t_ab80291af9c262f63b83fa9c16f12014d}} 
+\index{AST@{AST}!Parser@{Parser}}
+\index{Parser@{Parser}!AST@{AST}}
+\subsubsection{\texorpdfstring{Parser}{Parser}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_parser}{Parser}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\hyperlink{class_parser}{Parser}} is the only one who needs to directly access the translation unit in order to build the \mbox{\hyperlink{class_a_s_t}{A\+ST}}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/A\+S\+T.\+h\end{DoxyCompactItemize}

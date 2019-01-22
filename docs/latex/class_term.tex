@@ -1,0 +1,87 @@
+\hypertarget{class_term}{}\section{Term Class Reference}
+\label{class_term}\index{Term@{Term}}
+
+
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$term$>$} in C\+O\+RE.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for Term\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_term}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_term_abaddcf953573853a7fa95fe7bca4a27c}\label{class_term_abaddcf953573853a7fa95fe7bca4a27c}} 
+int {\bfseries get\+Value} () const
+\item 
+\mbox{\Hypertarget{class_term_a61ab0c553c63ce2b07b1312a7f441e6c}\label{class_term_a61ab0c553c63ce2b07b1312a7f441e6c}} 
+{\bfseries Term} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context, bool Splits\+Context)
+\item 
+\mbox{\Hypertarget{class_term_a965c10d83e5ed18a34fc05f29c966d7e}\label{class_term_a965c10d83e5ed18a34fc05f29c966d7e}} 
+{\bfseries Term} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context)
+\item 
+void \mbox{\hyperlink{class_term_a36f292dd7bd0d04cb97ca97afd476fc7}{Print}} (std\+::ostringstream \&X, unsigned Indent) override
+\item 
+void \mbox{\hyperlink{class_term_aca584601256c9ccb79b5936907b7bf30}{Execute}} (\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&C) override
+\item 
+\mbox{\Hypertarget{class_term_a63238ed52d795eeac4319d1488149b3c}\label{class_term_a63238ed52d795eeac4319d1488149b3c}} 
+\mbox{\hyperlink{class_token}{Token}} {\bfseries get\+Token} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_term_a62bd6aba986af937760d22bc27c3eee1}\label{class_term_a62bd6aba986af937760d22bc27c3eee1}} 
+static bool {\bfseries can\+Parse} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$term$>$} in C\+O\+RE. 
+
+The value of a term to be properly set after it is interpreted. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_term_aca584601256c9ccb79b5936907b7bf30}\label{class_term_aca584601256c9ccb79b5936907b7bf30}} 
+\index{Term@{Term}!Execute@{Execute}}
+\index{Execute@{Execute}!Term@{Term}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void Term\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes / evaluates the node. 
+\begin{DoxyParams}{Parameters}
+{\em C} & the context against which the node will execute / evaluate for. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a27ad1ba81d2596817b361368282bcbfa}{Node}}.
+
+\mbox{\Hypertarget{class_term_a36f292dd7bd0d04cb97ca97afd476fc7}\label{class_term_a36f292dd7bd0d04cb97ca97afd476fc7}} 
+\index{Term@{Term}!Print@{Print}}
+\index{Print@{Print}!Term@{Term}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Term\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostringstream \&}]{X,  }\item[{unsigned}]{Indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pretty print the node back to the source language. 
+\begin{DoxyParams}{Parameters}
+{\em X} & the stream which to append to. \\
+\hline
+{\em Indent} & the level of indent to print at in the stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a5325b760a6e6fe94227c0cff53af2c45}{Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/Node.\+h\end{DoxyCompactItemize}

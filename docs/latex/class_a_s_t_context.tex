@@ -1,0 +1,178 @@
+\hypertarget{class_a_s_t_context}{}\section{A\+S\+T\+Context Class Reference}
+\label{class_a_s_t_context}\index{ASTContext@{ASTContext}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_s_t_context_a1463923780957a5a38c0aaf4dbb11f52}\label{class_a_s_t_context_a1463923780957a5a38c0aaf4dbb11f52}} 
+\mbox{\hyperlink{class_a_s_t_context_a1463923780957a5a38c0aaf4dbb11f52}{A\+S\+T\+Context}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an abstract syntax tree context with an initialized empty symbol table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_s_t_context_acd7acf552b230154c1054b02c4999bdc}{Declare}} (\mbox{\hyperlink{class_id_list}{Id\+List}} $\ast$L)
+\begin{DoxyCompactList}\small\item\em Declares the \mbox{\hyperlink{class_id}{Id}} list in to the symbol tabel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_s_t_context_a0740b00839dd944ec76824fe9e8a04ec}{Initialize}} (\mbox{\hyperlink{class_id_list}{Id\+List}} $\ast$L)
+\begin{DoxyCompactList}\small\item\em A convinence method to call {\ttfamily Initialize} on each {\ttfamily \mbox{\hyperlink{class_id}{Id}}} in an {\ttfamily \mbox{\hyperlink{class_id_list}{Id\+List}}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_s_t_context_a4efe717235bbacb2951952e4066765fc}{Initialize}} (\mbox{\hyperlink{class_id}{Id}} $\ast$I)
+\item 
+void \mbox{\hyperlink{class_a_s_t_context_a18c75427149b0ab3bbf68c1bff35d21c}{Reference}} (\mbox{\hyperlink{class_id_list}{Id\+List}} $\ast$L)
+\begin{DoxyCompactList}\small\item\em A convinence method to call {\ttfamily Reference} on each {\ttfamily \mbox{\hyperlink{class_id}{Id}}} in an {\ttfamily \mbox{\hyperlink{class_id_list}{Id\+List}}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_s_t_context_a0377bcdd8b7733e14906042786d1b126}{Reference}} (\mbox{\hyperlink{class_id}{Id}} $\ast$I)
+\begin{DoxyCompactList}\small\item\em A method called for every reference (r-\/value) to an {\ttfamily \mbox{\hyperlink{class_id}{Id}}} in a C\+O\+RE statement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_s_t_context_a5054d426dc2d3192387ef949f70960f8}\label{class_a_s_t_context_a5054d426dc2d3192387ef949f70960f8}} 
+bool \mbox{\hyperlink{class_a_s_t_context_a5054d426dc2d3192387ef949f70960f8}{Has}} (\mbox{\hyperlink{class_id}{Id}} $\ast$I)
+\begin{DoxyCompactList}\small\item\em Checks and returns whether the given {\ttfamily \mbox{\hyperlink{class_id}{Id}}} exists in the symbol tabel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_s_t_context_a60625101474904dd06d2b4ede8297a3c}{Set}} (\mbox{\hyperlink{class_id}{Id}} $\ast$I, int Value)
+\begin{DoxyCompactList}\small\item\em Set an existing {\ttfamily \mbox{\hyperlink{class_id}{Id}}} to a given value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_a_s_t_context_a15a3e83c6f13870f563dd5034c724b78}{Get}} (\mbox{\hyperlink{class_id}{Id}} $\ast$I)
+\begin{DoxyCompactList}\small\item\em Get the value of an existing {\ttfamily \mbox{\hyperlink{class_id}{Id}}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_s_t_context_a539939d7d76d3bd308bb0fdf3d256b6f}{Set\+From\+In}} (\mbox{\hyperlink{class_id_list}{Id\+List}} $\ast$L)
+\begin{DoxyCompactList}\small\item\em Sets the value of each {\ttfamily \mbox{\hyperlink{class_id}{Id}}} in the {\ttfamily \mbox{\hyperlink{class_id_list}{Id\+List}}} to a coresponding value that the user inputs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_s_t_context_a9cdb44ac644fb3b8de1eb2193b7a4f5b}{Write\+To\+Out}} (\mbox{\hyperlink{class_id_list}{Id\+List}} $\ast$L)
+\begin{DoxyCompactList}\small\item\em Writes each {\ttfamily \mbox{\hyperlink{class_id}{Id}}} of the {\ttfamily \mbox{\hyperlink{class_id_list}{Id\+List}}} to {\ttfamily std\+::cout}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_s_t_context_acd7acf552b230154c1054b02c4999bdc}\label{class_a_s_t_context_acd7acf552b230154c1054b02c4999bdc}} 
+\index{ASTContext@{ASTContext}!Declare@{Declare}}
+\index{Declare@{Declare}!ASTContext@{ASTContext}}
+\subsubsection{\texorpdfstring{Declare()}{Declare()}}
+{\footnotesize\ttfamily void A\+S\+T\+Context\+::\+Declare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_id_list}{Id\+List}} $\ast$}]{L }\end{DoxyParamCaption})}
+
+
+
+Declares the \mbox{\hyperlink{class_id}{Id}} list in to the symbol tabel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em L} & an {\ttfamily \mbox{\hyperlink{class_id_list}{Id\+List}}} node that does not have any declared {\ttfamily \mbox{\hyperlink{class_id}{Id}}}s. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::string} & if an \mbox{\hyperlink{class_id}{Id}} has already been declared. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_a_s_t_context_a15a3e83c6f13870f563dd5034c724b78}\label{class_a_s_t_context_a15a3e83c6f13870f563dd5034c724b78}} 
+\index{ASTContext@{ASTContext}!Get@{Get}}
+\index{Get@{Get}!ASTContext@{ASTContext}}
+\subsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily int A\+S\+T\+Context\+::\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_id}{Id}} $\ast$}]{I }\end{DoxyParamCaption})}
+
+
+
+Get the value of an existing {\ttfamily \mbox{\hyperlink{class_id}{Id}}}. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::sting} & if the {\ttfamily \mbox{\hyperlink{class_id}{Id}}} doesn\textquotesingle{}t exist \\
+\hline
+{\em std\+::sting} & if the {\ttfamily \mbox{\hyperlink{class_id}{Id}}} hasn\textquotesingle{}t been initialized \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+the value in the symbol table of the {\ttfamily \mbox{\hyperlink{class_id}{Id}}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_s_t_context_a0740b00839dd944ec76824fe9e8a04ec}\label{class_a_s_t_context_a0740b00839dd944ec76824fe9e8a04ec}} 
+\index{ASTContext@{ASTContext}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!ASTContext@{ASTContext}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void A\+S\+T\+Context\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_id_list}{Id\+List}} $\ast$}]{L }\end{DoxyParamCaption})}
+
+
+
+A convinence method to call {\ttfamily Initialize} on each {\ttfamily \mbox{\hyperlink{class_id}{Id}}} in an {\ttfamily \mbox{\hyperlink{class_id_list}{Id\+List}}}. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_s_t_context_a4efe717235bbacb2951952e4066765fc}{A\+S\+T\+Context\+::\+Initialize(\+Id $\ast$\+I)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_a_s_t_context_a4efe717235bbacb2951952e4066765fc}\label{class_a_s_t_context_a4efe717235bbacb2951952e4066765fc}} 
+\index{ASTContext@{ASTContext}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!ASTContext@{ASTContext}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void A\+S\+T\+Context\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_id}{Id}} $\ast$}]{I }\end{DoxyParamCaption})}
+
+A method called whenever an identifier is having it\textquotesingle{}s value set; whenever the l-\/value appears on the left hand side of an equals sign or is read into. \mbox{\Hypertarget{class_a_s_t_context_a18c75427149b0ab3bbf68c1bff35d21c}\label{class_a_s_t_context_a18c75427149b0ab3bbf68c1bff35d21c}} 
+\index{ASTContext@{ASTContext}!Reference@{Reference}}
+\index{Reference@{Reference}!ASTContext@{ASTContext}}
+\subsubsection{\texorpdfstring{Reference()}{Reference()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void A\+S\+T\+Context\+::\+Reference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_id_list}{Id\+List}} $\ast$}]{L }\end{DoxyParamCaption})}
+
+
+
+A convinence method to call {\ttfamily Reference} on each {\ttfamily \mbox{\hyperlink{class_id}{Id}}} in an {\ttfamily \mbox{\hyperlink{class_id_list}{Id\+List}}}. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_s_t_context_a0377bcdd8b7733e14906042786d1b126}{A\+S\+T\+Context\+::\+Reference(\+Id $\ast$\+I)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_a_s_t_context_a0377bcdd8b7733e14906042786d1b126}\label{class_a_s_t_context_a0377bcdd8b7733e14906042786d1b126}} 
+\index{ASTContext@{ASTContext}!Reference@{Reference}}
+\index{Reference@{Reference}!ASTContext@{ASTContext}}
+\subsubsection{\texorpdfstring{Reference()}{Reference()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void A\+S\+T\+Context\+::\+Reference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_id}{Id}} $\ast$}]{I }\end{DoxyParamCaption})}
+
+
+
+A method called for every reference (r-\/value) to an {\ttfamily \mbox{\hyperlink{class_id}{Id}}} in a C\+O\+RE statement. 
+
+This method will ensure the \mbox{\hyperlink{class_id}{Id}} is in the symbol table and has been initialized. This should not be called when an {\ttfamily \mbox{\hyperlink{class_id}{Id}}} is being declared.
+
+
+\begin{DoxyParams}{Parameters}
+{\em I} & an \mbox{\hyperlink{class_id}{Id}} that has been referenced in the {\ttfamily \mbox{\hyperlink{class_parser}{Parser}}}. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::string} & if the {\ttfamily \mbox{\hyperlink{class_id}{Id}}} is not in the symbol table. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_a_s_t_context_a60625101474904dd06d2b4ede8297a3c}\label{class_a_s_t_context_a60625101474904dd06d2b4ede8297a3c}} 
+\index{ASTContext@{ASTContext}!Set@{Set}}
+\index{Set@{Set}!ASTContext@{ASTContext}}
+\subsubsection{\texorpdfstring{Set()}{Set()}}
+{\footnotesize\ttfamily void A\+S\+T\+Context\+::\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_id}{Id}} $\ast$}]{I,  }\item[{int}]{Value }\end{DoxyParamCaption})}
+
+
+
+Set an existing {\ttfamily \mbox{\hyperlink{class_id}{Id}}} to a given value. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::sting} & if the {\ttfamily \mbox{\hyperlink{class_id}{Id}}} doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_a_s_t_context_a539939d7d76d3bd308bb0fdf3d256b6f}\label{class_a_s_t_context_a539939d7d76d3bd308bb0fdf3d256b6f}} 
+\index{ASTContext@{ASTContext}!SetFromIn@{SetFromIn}}
+\index{SetFromIn@{SetFromIn}!ASTContext@{ASTContext}}
+\subsubsection{\texorpdfstring{SetFromIn()}{SetFromIn()}}
+{\footnotesize\ttfamily void A\+S\+T\+Context\+::\+Set\+From\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_id_list}{Id\+List}} $\ast$}]{L }\end{DoxyParamCaption})}
+
+
+
+Sets the value of each {\ttfamily \mbox{\hyperlink{class_id}{Id}}} in the {\ttfamily \mbox{\hyperlink{class_id_list}{Id\+List}}} to a coresponding value that the user inputs. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::sting} & if {\ttfamily an} \mbox{\hyperlink{class_id}{Id}} doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_a_s_t_context_a9cdb44ac644fb3b8de1eb2193b7a4f5b}\label{class_a_s_t_context_a9cdb44ac644fb3b8de1eb2193b7a4f5b}} 
+\index{ASTContext@{ASTContext}!WriteToOut@{WriteToOut}}
+\index{WriteToOut@{WriteToOut}!ASTContext@{ASTContext}}
+\subsubsection{\texorpdfstring{WriteToOut()}{WriteToOut()}}
+{\footnotesize\ttfamily void A\+S\+T\+Context\+::\+Write\+To\+Out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_id_list}{Id\+List}} $\ast$}]{L }\end{DoxyParamCaption})}
+
+
+
+Writes each {\ttfamily \mbox{\hyperlink{class_id}{Id}}} of the {\ttfamily \mbox{\hyperlink{class_id_list}{Id\+List}}} to {\ttfamily std\+::cout}. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::sting} & if an {\ttfamily \mbox{\hyperlink{class_id}{Id}}} doesn\textquotesingle{}t exist \\
+\hline
+{\em std\+::sting} & if an {\ttfamily \mbox{\hyperlink{class_id}{Id}}} hasn\textquotesingle{}t been initialized \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/A\+S\+T\+Context.\+h\end{DoxyCompactItemize}

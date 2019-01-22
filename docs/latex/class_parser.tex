@@ -1,0 +1,131 @@
+\hypertarget{class_parser}{}\section{Parser Class Reference}
+\label{class_parser}\index{Parser@{Parser}}
+
+
+{\ttfamily \#include $<$Parser.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \& \mbox{\hyperlink{class_parser_a65b2904aef56312309daed77baa619fa}{get\+Context}} () const
+\item 
+\mbox{\Hypertarget{class_parser_a594d1c85e8dd24409f2f8bc278336c16}\label{class_parser_a594d1c85e8dd24409f2f8bc278336c16}} 
+\mbox{\hyperlink{class_token}{Token}} \mbox{\hyperlink{class_parser_a594d1c85e8dd24409f2f8bc278336c16}{current\+Token}} () const
+\begin{DoxyCompactList}\small\item\em Returns the last tokenized \mbox{\hyperlink{class_token}{Token}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_parser_a8d2f5841105233ab7fb81011e6fdc9a4}{Consume\+Token}} ()
+\item 
+bool \mbox{\hyperlink{class_parser_aface90ca5edbe4709e3aed46250062da}{Consume\+If}} (Token\+Type\+::\+Token\+Type Type)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{class_parser_a692cce2c9f518b58f95ee6d5471423b7}{Consume\+If}} (Token\+Type\+::\+Token\+Type Type, Diag\+Type\+::\+Diag\+Type Error, Args \&\&... args)
+\item 
+\mbox{\Hypertarget{class_parser_ab3a7174728861132c7439a4df5f2c85a}\label{class_parser_ab3a7174728861132c7439a4df5f2c85a}} 
+bool \mbox{\hyperlink{class_parser_ab3a7174728861132c7439a4df5f2c85a}{is\+Token}} (Token\+Type\+::\+Token\+Type Type)
+\begin{DoxyCompactList}\small\item\em Returns whether the current token is the specified type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_parser_aa55266b2875ee4ab02f8b311a56e7fc3}{Parse}} ()
+\item 
+void \mbox{\hyperlink{class_parser_ad0aa1454babab9d013c7e681318b5750}{Undecorated\+Parse}} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_parser}{Parser}} $\ast$ \mbox{\hyperlink{class_parser_a9b192cbac9570cca9dd22c64d2212747}{Create\+From\+String}} (std\+::string String, class \mbox{\hyperlink{class_a_s_t}{A\+ST}} \&A)
+\item 
+static \mbox{\hyperlink{class_parser}{Parser}} $\ast$ \mbox{\hyperlink{class_parser_a9dec351ab37990879df527597383442a}{Create\+From\+File}} (std\+::string File\+Path, class \mbox{\hyperlink{class_a_s_t}{A\+ST}} \&A)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class to perform the parsing a C\+O\+RE language translation unit into an abstract syntax tree. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_parser_aface90ca5edbe4709e3aed46250062da}\label{class_parser_aface90ca5edbe4709e3aed46250062da}} 
+\index{Parser@{Parser}!ConsumeIf@{ConsumeIf}}
+\index{ConsumeIf@{ConsumeIf}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{ConsumeIf()}{ConsumeIf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Parser\+::\+Consume\+If (\begin{DoxyParamCaption}\item[{Token\+Type\+::\+Token\+Type}]{Type }\end{DoxyParamCaption})}
+
+Convinence method that calls {\ttfamily Consume\+Token} if the current token is of the specified type. \mbox{\Hypertarget{class_parser_a692cce2c9f518b58f95ee6d5471423b7}\label{class_parser_a692cce2c9f518b58f95ee6d5471423b7}} 
+\index{Parser@{Parser}!ConsumeIf@{ConsumeIf}}
+\index{ConsumeIf@{ConsumeIf}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{ConsumeIf()}{ConsumeIf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void Parser\+::\+Consume\+If (\begin{DoxyParamCaption}\item[{Token\+Type\+::\+Token\+Type}]{Type,  }\item[{Diag\+Type\+::\+Diag\+Type}]{Error,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Convinence method that calls {\ttfamily Consume\+Token} if the current token is of the specified type. \mbox{\hyperlink{class_if}{If}} it is not it throws the passed in diagnostic type. \mbox{\Hypertarget{class_parser_a8d2f5841105233ab7fb81011e6fdc9a4}\label{class_parser_a8d2f5841105233ab7fb81011e6fdc9a4}} 
+\index{Parser@{Parser}!ConsumeToken@{ConsumeToken}}
+\index{ConsumeToken@{ConsumeToken}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{ConsumeToken()}{ConsumeToken()}}
+{\footnotesize\ttfamily void Parser\+::\+Consume\+Token (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retrieves the next token essentialy skipping past the current token or \char`\"{}consuming\char`\"{} it. \mbox{\Hypertarget{class_parser_a9dec351ab37990879df527597383442a}\label{class_parser_a9dec351ab37990879df527597383442a}} 
+\index{Parser@{Parser}!CreateFromFile@{CreateFromFile}}
+\index{CreateFromFile@{CreateFromFile}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{CreateFromFile()}{CreateFromFile()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_parser}{Parser}}$\ast$ Parser\+::\+Create\+From\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{File\+Path,  }\item[{class \mbox{\hyperlink{class_a_s_t}{A\+ST}} \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes and returns the pointer to a parser tied to a tokenizer constructed with the specified file representation of a C\+O\+RE translation unit. 
+\begin{DoxyParams}{Parameters}
+{\em File\+Path} & a file path to a file representing a C\+O\+RE translation unit. \\
+\hline
+{\em A} & an empty \mbox{\hyperlink{class_a_s_t}{A\+ST}}. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em any} & error that a \mbox{\hyperlink{class_tokenizer}{Tokenizer}} might throw on construction. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+a pointer to a newly allocated \mbox{\hyperlink{class_parser}{Parser}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_parser_a9b192cbac9570cca9dd22c64d2212747}\label{class_parser_a9b192cbac9570cca9dd22c64d2212747}} 
+\index{Parser@{Parser}!CreateFromString@{CreateFromString}}
+\index{CreateFromString@{CreateFromString}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{CreateFromString()}{CreateFromString()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_parser}{Parser}}$\ast$ Parser\+::\+Create\+From\+String (\begin{DoxyParamCaption}\item[{std\+::string}]{String,  }\item[{class \mbox{\hyperlink{class_a_s_t}{A\+ST}} \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes and returns the pointer to a parser tied to a tokenizer constructed with the specified string representation of a C\+O\+RE translation unit. 
+\begin{DoxyParams}{Parameters}
+{\em String} & a string representing a C\+O\+RE translation unit. \\
+\hline
+{\em A} & an empty \mbox{\hyperlink{class_a_s_t}{A\+ST}}. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em any} & error that a \mbox{\hyperlink{class_tokenizer}{Tokenizer}} might throw on construction. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+a pointer to a newly allocated \mbox{\hyperlink{class_parser}{Parser}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_parser_a65b2904aef56312309daed77baa619fa}\label{class_parser_a65b2904aef56312309daed77baa619fa}} 
+\index{Parser@{Parser}!getContext@{getContext}}
+\index{getContext@{getContext}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{getContext()}{getContext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}}\& Parser\+::get\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Retrieves the context (symbol table) for the abstract syntax tree. By providing this methods \mbox{\Hypertarget{class_parser_aa55266b2875ee4ab02f8b311a56e7fc3}\label{class_parser_aa55266b2875ee4ab02f8b311a56e7fc3}} 
+\index{Parser@{Parser}!Parse@{Parse}}
+\index{Parse@{Parse}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily void Parser\+::\+Parse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Decorates errors that occur from actual parsing in {\ttfamily Undecorated\+Parse} with line / column numbers and token information. \mbox{\Hypertarget{class_parser_ad0aa1454babab9d013c7e681318b5750}\label{class_parser_ad0aa1454babab9d013c7e681318b5750}} 
+\index{Parser@{Parser}!UndecoratedParse@{UndecoratedParse}}
+\index{UndecoratedParse@{UndecoratedParse}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{UndecoratedParse()}{UndecoratedParse()}}
+{\footnotesize\ttfamily void Parser\+::\+Undecorated\+Parse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Attempts to parse the C\+O\+RE translation unit starting from it\textquotesingle{}s first nonterminal.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::string,\mbox{\hyperlink{class_diag}{Diag}},\mbox{\hyperlink{class_loc_diag}{Loc\+Diag}}} & will throw any errors received during parsing. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+Parser/Parser.\+h\end{DoxyCompactItemize}

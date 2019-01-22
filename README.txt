@@ -1,28 +1,26 @@
 Author: ケジ
 
 Files:
-  - include/Token.h: A class for holding token information. Token types are
-    stored as enums.
-  - include/Tokenizer.h: Defines a class that takes input from a file, reads
-    each character and forms valid tokens, breaking when an invalid token is
-    registered. This operation is greedy, so `===` is split into to:
-    `==` + `=`.
-  - lib/Tokenizer.cpp: Implementation file for the Tokenizer class described
-    above.
-  - CMakeLists.txt: Sets up compiler flags, header search paths, and source
-    files. Defines the executable.
-  - TokenizerMain.cpp: The main Tokenizer program that sets up a Tokenizer
-    object and using the first argument (file path to a CORE language source
-    file) passed in to the program, outputs the corresponding token type
-    numbers for the source file.
+  - include/core/AST/*: Defines members and classes for the abstract syntax
+    tree. This includes interfaces for printing and interpreting as well.
+  - include/core/Diag/*: Defines & implements diagnostic errors.
+  - include/core/Parser/*: Defines the Parser class.
+  - include/core/Tokenizer/*: Defines the Tokenizer class and other structures.
+  - lib/core/*: Implementations for the above headers.
 
-Compilation:
-  1. Run `cmake ./` in the root directory of the project to export a Makefile
-    from the `CMakeLists.txt` file.
-  2. Run `make` to build the `Tokenizer` executable.
+Compilation (Read all steps carefully before starting):
+  1. Run `CC=/usr/bin/clang CXX=/usr/bin/clang++ cmake ./` in the root
+    directory of the project to export a Makefile from the `CMakeLists.txt`
+    file.
+  2. Run `make` to build the `Tokenizer` / `Parser` / `Interpreter` / `Tester`
+    executables.
 
 Execution:
-  1. Use the executable as such: `Tokenizer testFile.core`, passing in a CORE
-    language source file.
+  1. Use the executables as such:
+    - `Tokenizer testFile.core`
+    - `Parser testFile.core`
+    - `Interpreter testFile.core`
+    - `Tester`
+    , passing in a CORE language source file.
   2. Note on some operating systems you may have to prefix the program name
     with the current working directory `./` -> `./Tokenizer testFile.core`.

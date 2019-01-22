@@ -1,0 +1,82 @@
+\hypertarget{class_decl}{}\section{Decl Class Reference}
+\label{class_decl}\index{Decl@{Decl}}
+
+
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$decl$>$} in C\+O\+RE.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for Decl\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_decl}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_decl_a4635985e7c8ccc1300980ff08e0c6b7a}\label{class_decl_a4635985e7c8ccc1300980ff08e0c6b7a}} 
+{\bfseries Decl} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context, bool Splits\+Context)
+\item 
+\mbox{\Hypertarget{class_decl_a163142f1e716666933ca511ccfdadb73}\label{class_decl_a163142f1e716666933ca511ccfdadb73}} 
+{\bfseries Decl} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context)
+\item 
+void \mbox{\hyperlink{class_decl_a2cd337f551b0a66d6787816c0a4a907a}{Print}} (std\+::ostringstream \&X, unsigned Indent) override
+\item 
+void \mbox{\hyperlink{class_decl_a6ac3129b12248807b15edc3377cb448f}{Execute}} (\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&C) override
+\item 
+\mbox{\Hypertarget{class_decl_aacac0556aea3276267178d35e3236abc}\label{class_decl_aacac0556aea3276267178d35e3236abc}} 
+\mbox{\hyperlink{class_token}{Token}} {\bfseries get\+Token} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_decl_a4399a127e04d2b01ee23bb2d9726c9dc}\label{class_decl_a4399a127e04d2b01ee23bb2d9726c9dc}} 
+static bool {\bfseries can\+Parse} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$decl$>$} in C\+O\+RE. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_decl_a6ac3129b12248807b15edc3377cb448f}\label{class_decl_a6ac3129b12248807b15edc3377cb448f}} 
+\index{Decl@{Decl}!Execute@{Execute}}
+\index{Execute@{Execute}!Decl@{Decl}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void Decl\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes / evaluates the node. 
+\begin{DoxyParams}{Parameters}
+{\em C} & the context against which the node will execute / evaluate for. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a27ad1ba81d2596817b361368282bcbfa}{Node}}.
+
+\mbox{\Hypertarget{class_decl_a2cd337f551b0a66d6787816c0a4a907a}\label{class_decl_a2cd337f551b0a66d6787816c0a4a907a}} 
+\index{Decl@{Decl}!Print@{Print}}
+\index{Print@{Print}!Decl@{Decl}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Decl\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostringstream \&}]{X,  }\item[{unsigned}]{Indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pretty print the node back to the source language. 
+\begin{DoxyParams}{Parameters}
+{\em X} & the stream which to append to. \\
+\hline
+{\em Indent} & the level of indent to print at in the stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a5325b760a6e6fe94227c0cff53af2c45}{Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/Node.\+h\end{DoxyCompactItemize}

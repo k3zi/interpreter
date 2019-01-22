@@ -1,20 +1,20 @@
 Overall Design:
-  This tokenizer essentially:
+  Tokenizer:
     1. Loads source file by passing file name to `Tokenizer` constructor.
-    2. Upon user calling `nextToken` fetches the next token:
+    2. Upon user calling `NextToken` fetches the next token:
       i. Reads one or more (if needed) characters from the file stream.
       ii. If the character denotes a symbol sets the current token to the type
         of symbol and a the string covered by the token in the source file.
       iii. If the character is alphanumeric the class will classify it by:
-        - Lowercase -> `nextReservedToken` (since reserved tokens are the only
+        - Lowercase -> `NextReservedToken` (since reserved tokens are the only
             tokens that start with a lowercase character)
-        - Uppercase -> `nextIdentifier` (since identifier tokens are the only
+        - Uppercase -> `NextIdentifier` (since identifier tokens are the only
             tokens that start with an uppercase character)
-        - Numeric -> `nextInteger` (since numeric tokens are the only
+        - Numeric -> `NextInteger` (since numeric tokens are the only
             tokens that start with a numeric character)
       ix. If the character hasn't matched and is not whitespace, newline, or
         and end-of-file the tokenizer will throw an error.
-      x. `nextReservedToken` / `nextIdentifier` / `nextInteger` process the
+      x. `NextReservedToken` / `NextIdentifier` / `NextInteger` process the
         file stream until all consecutive alphanumeric characters are consumed.
         These functions will throw any errors for tokens that are invalid in
         the CORE language (Ex: Integer/Identifier length greater than 8).
@@ -26,8 +26,27 @@ Overall Design:
       instead be outputted. If the tokenizer was successful in reading all
       tokens, the number representation will be printed to the program's
       output.
+  Parser:
+    1. Assigns to the AST the value of a constructed program.
+    2. The initializer of a `Prog` is passed the parser.
+    3. The parsing methods are contained in all of the Nodes constructors.
+    4. When an error is reached it is propagated up to the constructor.
+  Interpreter:
+    1. Works similar to how the parser recursively descends.
+    2. The AST.Execute() method may be used to execute a parsed AST.
+    3. The AST will execute the program (Prog.Execute) which will recursively
+      descend the constructed abstract syntax tree calling Execute at each node
+      and handling logic for statements.
+    4. The ASTContext class houses the symbol table that holds all identifiers
+      and their current values.
+    5. All programs must initialize a variable at all paths in the program
+      before the identifier may be used. This is enforced at the Parser level.
+      As such, the errors that occur at the Interpreter level are limited to
+      overflow/underflow and invalid integer input.
 
 Class Structure:
+  - Class structure for the Parser & Interpreter can be found in the
+    documenting header files.
   - Token.h:
     - TokenType (enum): This enum list is organized by the predetermined
       numbering of tokens. I.e: program, begin, end...
@@ -64,10 +83,10 @@ Class Structure:
         processing. Incremented on line breaks. Line 1 is considered the first
         line. Counting starts from 1. Not 0.
       - ColumnNumber (unsigned): The column number that the tokenizer is
-        processing. Resets on line breaks. Incremenets on character
+        processing. Resets on line breaks. Increments on character
         consumption. Column 1 is considered the first column. Counting starts
         from 1. Not 0.
-      - nextIdentifier ((std::string) -> unsigned): Processes the next
+      - NextIdentifier ((std::string) -> unsigned): Processes the next
         identifier token from the file stream. The passed in `tokenString`
         must contain a single uppercase character. This function processes up
         to (but not including) a character that is non-alphanumeric. Identifier
@@ -79,8 +98,8 @@ Class Structure:
             characters are non-digits. Ex: ABC123X.
           - The resulting identifier exceeds `IdentifierMaxLength`
         Returns: The number of characters consumed. AKA The resultant token's
-          ength.
-      - nextReservedToken ((std::string) -> unsigned): Processes the next
+          length.
+      - NextReservedToken ((std::string) -> unsigned): Processes the next
         reserved token from the file stream. The passed in `tokenString` must
         contain a single lowercase character. Reserved Token Format = [a-z]+
         and must match one of the predefined tokens. This function will throw
@@ -90,7 +109,7 @@ Class Structure:
           - The result matches none of the languages identifiers.
         Returns: The number of characters consumed. AKA The resultant
           token's length.
-      - nextInteger ((std::string) -> unsigned): Processes the next integer
+      - NextInteger ((std::string) -> unsigned): Processes the next integer
         token from the file stream. The passed in `tokenString` must contain a
         single numeric character. This function processes up to (but not
         including) a character that is non-alphanumeric.
@@ -102,8 +121,8 @@ Class Structure:
         Returns: The number of characters consumed. AKA The resultant
           token's length.
       - consumeToken (() -> void): Internal method that retrieves the next
-        token from the file stream. Is called by public member `nextToken` and
-        utilises: `nextIdentifier`, `nextInteger`, and `nextIdentifier`.
+        token from the file stream. Is called by public member `NextToken` and
+        utilizes: `NextIdentifier`, `NextInteger`, and `NextIdentifier`.
     - Public Members
       - `Constructor` ((std::string) -> Tokenizer): The only constructor for
         the Tokenizer. Takes in a file path to a CORE source file and opens a
@@ -114,16 +133,17 @@ Class Structure:
       - columnNumber (() -> unsigned): Returns the current line number of the
         scanner.
       - currentToken (() -> Token): Getter for the current token.
-      - nextToken (() -> void): Retrieves the next token from the file stream.
+      - NextToken (() -> void): Retrieves the next token from the file stream.
         That token can then subsequently be read by calling
-        `Tokenizer::currentToken`. Handles error outputing (specifically line
+        `Tokenizer::currentToken`. Handles error outputting (specifically line
         numbers).
       - isEOF (() -> bool): Whether the tokenizer (and file stream) has reached
         the end of token output. End of file.
 
 Testing / Bugs:
   - Code was tested batch running against various valid and invalid CORE files
-    and comparing the output to manual calculations of the resultant token
+    and comparing the output to given calculations of the resultant token
     number stream; ensuring that code that was erroneous failed to produce a
     token stream and halted with a reasonable error description.
-  - As of this latest version no outsanding bugs are presenet.
+  - As of this latest version no outstanding bugs are present.
+  - For Parser project integration tests were introduced.

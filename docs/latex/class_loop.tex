@@ -1,0 +1,84 @@
+\hypertarget{class_loop}{}\section{Loop Class Reference}
+\label{class_loop}\index{Loop@{Loop}}
+
+
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$loop$>$} in C\+O\+RE.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for Loop\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_loop}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_loop_aa87032d7991bfb467c1d62b58730c1de}\label{class_loop_aa87032d7991bfb467c1d62b58730c1de}} 
+{\bfseries Loop} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context, bool Splits\+Context)
+\item 
+\mbox{\Hypertarget{class_loop_a333a55c33661bc72479f076b61f2ae78}\label{class_loop_a333a55c33661bc72479f076b61f2ae78}} 
+{\bfseries Loop} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context)
+\item 
+void \mbox{\hyperlink{class_loop_aa2907209a033f57b7ca8bbee857b2bfe}{Print}} (std\+::ostringstream \&X, unsigned Indent) override
+\item 
+void \mbox{\hyperlink{class_loop_aaf0a44c940844b8ac4ac521dbb703f9a}{Execute}} (\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&C) override
+\item 
+\mbox{\Hypertarget{class_loop_aa4415b3f37e5901a83bca827b79ab7eb}\label{class_loop_aa4415b3f37e5901a83bca827b79ab7eb}} 
+\mbox{\hyperlink{class_token}{Token}} {\bfseries get\+Token} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_loop_af116709f5340c758920842ca6999b92f}\label{class_loop_af116709f5340c758920842ca6999b92f}} 
+static bool {\bfseries can\+Parse} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$loop$>$} in C\+O\+RE. 
+
+The condition required to be true to enter and continue executing the loop. The sequence of statements to be executed as the body of the loop. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_loop_aaf0a44c940844b8ac4ac521dbb703f9a}\label{class_loop_aaf0a44c940844b8ac4ac521dbb703f9a}} 
+\index{Loop@{Loop}!Execute@{Execute}}
+\index{Execute@{Execute}!Loop@{Loop}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void Loop\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes / evaluates the node. 
+\begin{DoxyParams}{Parameters}
+{\em C} & the context against which the node will execute / evaluate for. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a27ad1ba81d2596817b361368282bcbfa}{Node}}.
+
+\mbox{\Hypertarget{class_loop_aa2907209a033f57b7ca8bbee857b2bfe}\label{class_loop_aa2907209a033f57b7ca8bbee857b2bfe}} 
+\index{Loop@{Loop}!Print@{Print}}
+\index{Print@{Print}!Loop@{Loop}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Loop\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostringstream \&}]{X,  }\item[{unsigned}]{Indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pretty print the node back to the source language. 
+\begin{DoxyParams}{Parameters}
+{\em X} & the stream which to append to. \\
+\hline
+{\em Indent} & the level of indent to print at in the stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a5325b760a6e6fe94227c0cff53af2c45}{Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/Node.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,90 @@
+\hypertarget{class_id_list}{}\section{Id\+List Class Reference}
+\label{class_id_list}\index{IdList@{IdList}}
+
+
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$id-\/list$>$} in C\+O\+RE.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for Id\+List\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_id_list}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_id_list_ab2e36d6ae36afd32a08bc89ece87b3dc}\label{class_id_list_ab2e36d6ae36afd32a08bc89ece87b3dc}} 
+class \mbox{\hyperlink{class_id}{Id}} $\ast$ {\bfseries get\+Id} () const
+\item 
+\mbox{\Hypertarget{class_id_list_a708dcee9c89e920413beae12e195c4a0}\label{class_id_list_a708dcee9c89e920413beae12e195c4a0}} 
+\mbox{\hyperlink{class_id_list}{Id\+List}} $\ast$ {\bfseries get\+Seq} () const
+\item 
+\mbox{\Hypertarget{class_id_list_a9e82348d3333f072019cfb6578997761}\label{class_id_list_a9e82348d3333f072019cfb6578997761}} 
+{\bfseries Id\+List} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context, bool Splits\+Context)
+\item 
+\mbox{\Hypertarget{class_id_list_afe57d5b1367faf9a0d7847ec8021b707}\label{class_id_list_afe57d5b1367faf9a0d7847ec8021b707}} 
+{\bfseries Id\+List} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context)
+\item 
+void \mbox{\hyperlink{class_id_list_a1e2cd3692c956de8cebb88ffcaf0242f}{Print}} (std\+::ostringstream \&X, unsigned Indent) override
+\item 
+void \mbox{\hyperlink{class_id_list_a9de286be5a5a810ae4cd77df0bd6517f}{Execute}} (\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&C) override
+\item 
+\mbox{\Hypertarget{class_id_list_ad69fb94447ac5dbff30d0f81e23c49df}\label{class_id_list_ad69fb94447ac5dbff30d0f81e23c49df}} 
+\mbox{\hyperlink{class_token}{Token}} {\bfseries get\+Token} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_id_list_ac55c8e6ee9e1843b7048880ceb03455b}\label{class_id_list_ac55c8e6ee9e1843b7048880ceb03455b}} 
+static bool {\bfseries can\+Parse} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$id-\/list$>$} in C\+O\+RE. 
+
+The identifier that appears in either alternate of an $<$id-\/list$>$. The sequence present in the second alternative. After initialization this value may be empty. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_id_list_a9de286be5a5a810ae4cd77df0bd6517f}\label{class_id_list_a9de286be5a5a810ae4cd77df0bd6517f}} 
+\index{IdList@{IdList}!Execute@{Execute}}
+\index{Execute@{Execute}!IdList@{IdList}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void Id\+List\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes / evaluates the node. 
+\begin{DoxyParams}{Parameters}
+{\em C} & the context against which the node will execute / evaluate for. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a27ad1ba81d2596817b361368282bcbfa}{Node}}.
+
+\mbox{\Hypertarget{class_id_list_a1e2cd3692c956de8cebb88ffcaf0242f}\label{class_id_list_a1e2cd3692c956de8cebb88ffcaf0242f}} 
+\index{IdList@{IdList}!Print@{Print}}
+\index{Print@{Print}!IdList@{IdList}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Id\+List\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostringstream \&}]{X,  }\item[{unsigned}]{Indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pretty print the node back to the source language. 
+\begin{DoxyParams}{Parameters}
+{\em X} & the stream which to append to. \\
+\hline
+{\em Indent} & the level of indent to print at in the stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a5325b760a6e6fe94227c0cff53af2c45}{Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/Node.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,84 @@
+\hypertarget{class_out}{}\section{Out Class Reference}
+\label{class_out}\index{Out@{Out}}
+
+
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$out$>$} in C\+O\+RE.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for Out\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_out}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_out_aad62e170543a572e02cc2fdf2ac66ef5}\label{class_out_aad62e170543a572e02cc2fdf2ac66ef5}} 
+{\bfseries Out} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context, bool Splits\+Context)
+\item 
+\mbox{\Hypertarget{class_out_afe11888d3b8b3642dbb518fd59d48a51}\label{class_out_afe11888d3b8b3642dbb518fd59d48a51}} 
+{\bfseries Out} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context)
+\item 
+void \mbox{\hyperlink{class_out_a3aefc50458c5e3f05e3e7419c93c8eb5}{Print}} (std\+::ostringstream \&X, unsigned Indent) override
+\item 
+void \mbox{\hyperlink{class_out_a4ffa25656789ae40127a2f06d6e36207}{Execute}} (\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&C) override
+\item 
+\mbox{\Hypertarget{class_out_a652d69e9fb528580c94399f45ac68e84}\label{class_out_a652d69e9fb528580c94399f45ac68e84}} 
+\mbox{\hyperlink{class_token}{Token}} {\bfseries get\+Token} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_out_af2855dea81d0cd7c800af27f6ce371f1}\label{class_out_af2855dea81d0cd7c800af27f6ce371f1}} 
+static bool {\bfseries can\+Parse} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$out$>$} in C\+O\+RE. 
+
+The $<$id-\/list$>$ to write out to the user. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_out_a4ffa25656789ae40127a2f06d6e36207}\label{class_out_a4ffa25656789ae40127a2f06d6e36207}} 
+\index{Out@{Out}!Execute@{Execute}}
+\index{Execute@{Execute}!Out@{Out}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void Out\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes / evaluates the node. 
+\begin{DoxyParams}{Parameters}
+{\em C} & the context against which the node will execute / evaluate for. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a27ad1ba81d2596817b361368282bcbfa}{Node}}.
+
+\mbox{\Hypertarget{class_out_a3aefc50458c5e3f05e3e7419c93c8eb5}\label{class_out_a3aefc50458c5e3f05e3e7419c93c8eb5}} 
+\index{Out@{Out}!Print@{Print}}
+\index{Print@{Print}!Out@{Out}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Out\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostringstream \&}]{X,  }\item[{unsigned}]{Indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pretty print the node back to the source language. 
+\begin{DoxyParams}{Parameters}
+{\em X} & the stream which to append to. \\
+\hline
+{\em Indent} & the level of indent to print at in the stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a5325b760a6e6fe94227c0cff53af2c45}{Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/Node.\+h\end{DoxyCompactItemize}

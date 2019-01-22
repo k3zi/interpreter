@@ -1,0 +1,121 @@
+\hypertarget{class_stmt_seq}{}\section{Stmt\+Seq Class Reference}
+\label{class_stmt_seq}\index{StmtSeq@{StmtSeq}}
+
+
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$stmt-\/seq$>$} in C\+O\+RE.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for Stmt\+Seq\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_stmt_seq}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_stmt_seq_ace7cc2cf4e1de29084cccccb15faf232}\label{class_stmt_seq_ace7cc2cf4e1de29084cccccb15faf232}} 
+void {\bfseries Initialize} (\mbox{\hyperlink{class_id}{Id}} $\ast$I)
+\item 
+\mbox{\Hypertarget{class_stmt_seq_ae34093bcad1344e65b81a0551d5512b9}\label{class_stmt_seq_ae34093bcad1344e65b81a0551d5512b9}} 
+void {\bfseries Initialize} (std\+::set$<$ std\+::string $>$ S)
+\item 
+\mbox{\Hypertarget{class_stmt_seq_abb4e03f592fc37395c898662ab181688}\label{class_stmt_seq_abb4e03f592fc37395c898662ab181688}} 
+void {\bfseries Initialize} (\mbox{\hyperlink{class_id_list}{Id\+List}} $\ast$IL)
+\item 
+\mbox{\Hypertarget{class_stmt_seq_a4fe17dd7802a0d496add30b731447a12}\label{class_stmt_seq_a4fe17dd7802a0d496add30b731447a12}} 
+void {\bfseries Assert\+Initialized} (\mbox{\hyperlink{class_id}{Id}} $\ast$I)
+\item 
+\mbox{\Hypertarget{class_stmt_seq_a38e5ba9ff740619f5fd82e86ad3890a9}\label{class_stmt_seq_a38e5ba9ff740619f5fd82e86ad3890a9}} 
+void {\bfseries Assert\+Initialized} (\mbox{\hyperlink{class_id_list}{Id\+List}} $\ast$IL)
+\item 
+\mbox{\Hypertarget{class_stmt_seq_addd6910699f83d10d9e0315c10ad0f8d}\label{class_stmt_seq_addd6910699f83d10d9e0315c10ad0f8d}} 
+void {\bfseries Set\+Root\+Seq} ()
+\item 
+\mbox{\Hypertarget{class_stmt_seq_a858eac92b3d5b7cf7a53fc26c3b5bd5e}\label{class_stmt_seq_a858eac92b3d5b7cf7a53fc26c3b5bd5e}} 
+void {\bfseries Set\+Root\+Seq} (\mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Prev\+Root)
+\item 
+\mbox{\Hypertarget{class_stmt_seq_a1b2f517f912900133bb6d26ef4240354}\label{class_stmt_seq_a1b2f517f912900133bb6d26ef4240354}} 
+std\+::set$<$ std\+::string $>$ $\ast$ {\bfseries get\+Initialized\+Ids} () const
+\item 
+\mbox{\Hypertarget{class_stmt_seq_ae66fab7ac0dff813661f5cfa00cbd055}\label{class_stmt_seq_ae66fab7ac0dff813661f5cfa00cbd055}} 
+{\bfseries Stmt\+Seq} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context, bool Splits\+Context)
+\item 
+\mbox{\Hypertarget{class_stmt_seq_a4425f9cc5dc2596127437723ae96f762}\label{class_stmt_seq_a4425f9cc5dc2596127437723ae96f762}} 
+{\bfseries Stmt\+Seq} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context)
+\item 
+void \mbox{\hyperlink{class_stmt_seq_aa9044b5fc51430f8da4d62b8c0beb8e7}{Print}} (std\+::ostringstream \&X, unsigned Indent) override
+\item 
+void \mbox{\hyperlink{class_stmt_seq_a7ed19a3d07348f0dab9f35861aa49382}{Execute}} (\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&C) override
+\item 
+\mbox{\Hypertarget{class_stmt_seq_a2e81edae0368f072bed08394775d03ed}\label{class_stmt_seq_a2e81edae0368f072bed08394775d03ed}} 
+\mbox{\hyperlink{class_token}{Token}} {\bfseries get\+Token} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_stmt_seq_a67b798afec171357ab13576b67ca58dc}\label{class_stmt_seq_a67b798afec171357ab13576b67ca58dc}} 
+static bool {\bfseries can\+Parse} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$stmt-\/seq$>$} in C\+O\+RE. 
+
+The set of identifiers that have been initialized within this statement sequence. Only one of these will exist for a sequence chain. Initializes an \mbox{\hyperlink{class_id}{Id}} node in the given context. To be called when an \mbox{\hyperlink{class_id}{Id}}\textquotesingle{}s value is changed. Initializes an \mbox{\hyperlink{class_id}{Id}}, given by the passed in string, in the given context. To be called when an \mbox{\hyperlink{class_id}{Id}}\textquotesingle{}s value is changed. A convinence method to call {\ttfamily Initialize} on each {\ttfamily \mbox{\hyperlink{class_id}{Id}}} in an {\ttfamily \mbox{\hyperlink{class_id_list}{Id\+List}}}.
+
+\begin{DoxySeeAlso}{See also}
+Stmt\+Seq\+::\+Initialize(\+Id $\ast$\+I) Checks that the passed in identifier has been initialized in this context. 
+\end{DoxySeeAlso}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_loc_diag}{Loc\+Diag}}} & if it has not been initialized. A convinence method to call {\ttfamily Assert\+Initialized} on each {\ttfamily \mbox{\hyperlink{class_id}{Id}}} in an {\ttfamily \mbox{\hyperlink{class_id_list}{Id\+List}}}.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+Stmt\+Seq\+::\+Assert\+Initialized(\+Id $\ast$\+I) 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_stmt_seq_a7ed19a3d07348f0dab9f35861aa49382}\label{class_stmt_seq_a7ed19a3d07348f0dab9f35861aa49382}} 
+\index{StmtSeq@{StmtSeq}!Execute@{Execute}}
+\index{Execute@{Execute}!StmtSeq@{StmtSeq}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void Stmt\+Seq\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes / evaluates the node. 
+\begin{DoxyParams}{Parameters}
+{\em C} & the context against which the node will execute / evaluate for. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a27ad1ba81d2596817b361368282bcbfa}{Node}}.
+
+\mbox{\Hypertarget{class_stmt_seq_aa9044b5fc51430f8da4d62b8c0beb8e7}\label{class_stmt_seq_aa9044b5fc51430f8da4d62b8c0beb8e7}} 
+\index{StmtSeq@{StmtSeq}!Print@{Print}}
+\index{Print@{Print}!StmtSeq@{StmtSeq}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Stmt\+Seq\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostringstream \&}]{X,  }\item[{unsigned}]{Indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pretty print the node back to the source language. 
+\begin{DoxyParams}{Parameters}
+{\em X} & the stream which to append to. \\
+\hline
+{\em Indent} & the level of indent to print at in the stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a5325b760a6e6fe94227c0cff53af2c45}{Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/Node.\+h\end{DoxyCompactItemize}

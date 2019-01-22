@@ -1,0 +1,84 @@
+\hypertarget{class_decl_seq}{}\section{Decl\+Seq Class Reference}
+\label{class_decl_seq}\index{DeclSeq@{DeclSeq}}
+
+
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$decl-\/seq$>$} in C\+O\+RE.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for Decl\+Seq\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_decl_seq}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_decl_seq_ac672d0fdc95d75a1a7b80bd8f3ba7ba7}\label{class_decl_seq_ac672d0fdc95d75a1a7b80bd8f3ba7ba7}} 
+{\bfseries Decl\+Seq} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context, bool Splits\+Context)
+\item 
+\mbox{\Hypertarget{class_decl_seq_a1ef2b90e633d78472d75b077556e7a1d}\label{class_decl_seq_a1ef2b90e633d78472d75b077556e7a1d}} 
+{\bfseries Decl\+Seq} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context)
+\item 
+void \mbox{\hyperlink{class_decl_seq_a028dc9916d5ab8369117d90b9e7af7f8}{Print}} (std\+::ostringstream \&X, unsigned Indent) override
+\item 
+void \mbox{\hyperlink{class_decl_seq_acf5b28c6f7705ec9dc5d587ad5edf9da}{Execute}} (\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&C) override
+\item 
+\mbox{\Hypertarget{class_decl_seq_ac78a1d481b2e89eb4903979febe99f3c}\label{class_decl_seq_ac78a1d481b2e89eb4903979febe99f3c}} 
+\mbox{\hyperlink{class_token}{Token}} {\bfseries get\+Token} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_decl_seq_a140d8aa97064ba298864a24b5d48c03b}\label{class_decl_seq_a140d8aa97064ba298864a24b5d48c03b}} 
+static bool {\bfseries can\+Parse} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$decl-\/seq$>$} in C\+O\+RE. 
+
+The decleration that appears in either alternate of a $<$decl-\/seq$>$. The sequence present in the second alternative. After initialization this value may be empty. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_decl_seq_acf5b28c6f7705ec9dc5d587ad5edf9da}\label{class_decl_seq_acf5b28c6f7705ec9dc5d587ad5edf9da}} 
+\index{DeclSeq@{DeclSeq}!Execute@{Execute}}
+\index{Execute@{Execute}!DeclSeq@{DeclSeq}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void Decl\+Seq\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes / evaluates the node. 
+\begin{DoxyParams}{Parameters}
+{\em C} & the context against which the node will execute / evaluate for. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a27ad1ba81d2596817b361368282bcbfa}{Node}}.
+
+\mbox{\Hypertarget{class_decl_seq_a028dc9916d5ab8369117d90b9e7af7f8}\label{class_decl_seq_a028dc9916d5ab8369117d90b9e7af7f8}} 
+\index{DeclSeq@{DeclSeq}!Print@{Print}}
+\index{Print@{Print}!DeclSeq@{DeclSeq}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Decl\+Seq\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostringstream \&}]{X,  }\item[{unsigned}]{Indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pretty print the node back to the source language. 
+\begin{DoxyParams}{Parameters}
+{\em X} & the stream which to append to. \\
+\hline
+{\em Indent} & the level of indent to print at in the stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a5325b760a6e6fe94227c0cff53af2c45}{Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/Node.\+h\end{DoxyCompactItemize}

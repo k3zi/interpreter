@@ -1,0 +1,82 @@
+\hypertarget{class_stmt}{}\section{Stmt Class Reference}
+\label{class_stmt}\index{Stmt@{Stmt}}
+
+
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$stmt$>$} in C\+O\+RE.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for Stmt\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_stmt}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_stmt_ada55db9525025c03d246f59b0a8d97d8}\label{class_stmt_ada55db9525025c03d246f59b0a8d97d8}} 
+{\bfseries Stmt} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context, bool Splits\+Context)
+\item 
+\mbox{\Hypertarget{class_stmt_a50d41532bd44ef709d8a86621003bb39}\label{class_stmt_a50d41532bd44ef709d8a86621003bb39}} 
+{\bfseries Stmt} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context)
+\item 
+void \mbox{\hyperlink{class_stmt_a7d29a5e877b3fa073d3c2e9da3effb27}{Print}} (std\+::ostringstream \&X, unsigned Indent) override
+\item 
+void \mbox{\hyperlink{class_stmt_a25f70d265d704c43b99d20442470bb71}{Execute}} (\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&C) override
+\item 
+\mbox{\Hypertarget{class_stmt_af90766d63b065421eab0b6e5e9854cd7}\label{class_stmt_af90766d63b065421eab0b6e5e9854cd7}} 
+\mbox{\hyperlink{class_token}{Token}} {\bfseries get\+Token} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_stmt_a4260c7325cc716d0e6e1958694fc11b1}\label{class_stmt_a4260c7325cc716d0e6e1958694fc11b1}} 
+static bool {\bfseries can\+Parse} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$stmt$>$} in C\+O\+RE. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_stmt_a25f70d265d704c43b99d20442470bb71}\label{class_stmt_a25f70d265d704c43b99d20442470bb71}} 
+\index{Stmt@{Stmt}!Execute@{Execute}}
+\index{Execute@{Execute}!Stmt@{Stmt}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void Stmt\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes / evaluates the node. 
+\begin{DoxyParams}{Parameters}
+{\em C} & the context against which the node will execute / evaluate for. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a27ad1ba81d2596817b361368282bcbfa}{Node}}.
+
+\mbox{\Hypertarget{class_stmt_a7d29a5e877b3fa073d3c2e9da3effb27}\label{class_stmt_a7d29a5e877b3fa073d3c2e9da3effb27}} 
+\index{Stmt@{Stmt}!Print@{Print}}
+\index{Print@{Print}!Stmt@{Stmt}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Stmt\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostringstream \&}]{X,  }\item[{unsigned}]{Indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pretty print the node back to the source language. 
+\begin{DoxyParams}{Parameters}
+{\em X} & the stream which to append to. \\
+\hline
+{\em Indent} & the level of indent to print at in the stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a5325b760a6e6fe94227c0cff53af2c45}{Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/Node.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,84 @@
+\hypertarget{class_assign}{}\section{Assign Class Reference}
+\label{class_assign}\index{Assign@{Assign}}
+
+
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$assign$>$} in C\+O\+RE.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for Assign\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_assign}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_assign_af3120048f9410bdbf92e1ad92e8d1b97}\label{class_assign_af3120048f9410bdbf92e1ad92e8d1b97}} 
+{\bfseries Assign} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context, bool Splits\+Context)
+\item 
+\mbox{\Hypertarget{class_assign_acf5bf44389754741e5f42038a284e808}\label{class_assign_acf5bf44389754741e5f42038a284e808}} 
+{\bfseries Assign} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context)
+\item 
+void \mbox{\hyperlink{class_assign_a1739f537e350e577898ae2447f928e4a}{Print}} (std\+::ostringstream \&X, unsigned Indent) override
+\item 
+void \mbox{\hyperlink{class_assign_a1803b147539aa47e431adc87c171a252}{Execute}} (\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&C) override
+\item 
+\mbox{\Hypertarget{class_assign_a5c11e02abf6c5e5562c63de70a516fd1}\label{class_assign_a5c11e02abf6c5e5562c63de70a516fd1}} 
+\mbox{\hyperlink{class_token}{Token}} {\bfseries get\+Token} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_assign_a2c82e269380be77374c508e9c835019a}\label{class_assign_a2c82e269380be77374c508e9c835019a}} 
+static bool {\bfseries can\+Parse} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$assign$>$} in C\+O\+RE. 
+
+The identifier to be assigned to. The expression that will be assigned to the identifier. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_assign_a1803b147539aa47e431adc87c171a252}\label{class_assign_a1803b147539aa47e431adc87c171a252}} 
+\index{Assign@{Assign}!Execute@{Execute}}
+\index{Execute@{Execute}!Assign@{Assign}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void Assign\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes / evaluates the node. 
+\begin{DoxyParams}{Parameters}
+{\em C} & the context against which the node will execute / evaluate for. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a27ad1ba81d2596817b361368282bcbfa}{Node}}.
+
+\mbox{\Hypertarget{class_assign_a1739f537e350e577898ae2447f928e4a}\label{class_assign_a1739f537e350e577898ae2447f928e4a}} 
+\index{Assign@{Assign}!Print@{Print}}
+\index{Print@{Print}!Assign@{Assign}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Assign\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostringstream \&}]{X,  }\item[{unsigned}]{Indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pretty print the node back to the source language. 
+\begin{DoxyParams}{Parameters}
+{\em X} & the stream which to append to. \\
+\hline
+{\em Indent} & the level of indent to print at in the stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a5325b760a6e6fe94227c0cff53af2c45}{Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/Node.\+h\end{DoxyCompactItemize}

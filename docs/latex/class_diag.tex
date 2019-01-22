@@ -1,0 +1,44 @@
+\hypertarget{class_diag}{}\section{Diag Class Reference}
+\label{class_diag}\index{Diag@{Diag}}
+
+
+{\ttfamily \#include $<$Diag.\+h$>$}
+
+Inheritance diagram for Diag\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_diag}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\\mbox{\hyperlink{class_diag_a33c4f75aee9e099724ac86e5ddfc16b9}{Diag}} (Diag\+Type\+::\+Diag\+Type D, Args \&\&... args)
+\item 
+\mbox{\Hypertarget{class_diag_af92c9d50d431a4052995fc3aa689c5b1}\label{class_diag_af92c9d50d431a4052995fc3aa689c5b1}} 
+const char $\ast$ {\bfseries what} () const noexcept override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_diag_a9368c50c0163dfe5ff8c44891db2acc9}\label{class_diag_a9368c50c0163dfe5ff8c44891db2acc9}} 
+{\footnotesize template$<$typename... Args$>$ }\\static string \mbox{\hyperlink{class_diag_a9368c50c0163dfe5ff8c44891db2acc9}{To\+String}} (Diag\+Type\+::\+Diag\+Type D, Args \&\&... args)
+\begin{DoxyCompactList}\small\item\em Format the actual error to a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A custom runtime error type that formats bassed on arguments passed into the constructor. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_diag_a33c4f75aee9e099724ac86e5ddfc16b9}\label{class_diag_a33c4f75aee9e099724ac86e5ddfc16b9}} 
+\index{Diag@{Diag}!Diag@{Diag}}
+\index{Diag@{Diag}!Diag@{Diag}}
+\subsubsection{\texorpdfstring{Diag()}{Diag()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+Diag\+::\+Diag (\begin{DoxyParamCaption}\item[{Diag\+Type\+::\+Diag\+Type}]{D,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a diagnostic error based on the type and formatted with the passed in arguments. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+Diag/Diag.\+h\end{DoxyCompactItemize}

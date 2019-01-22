@@ -1,0 +1,87 @@
+\hypertarget{class_fac}{}\section{Fac Class Reference}
+\label{class_fac}\index{Fac@{Fac}}
+
+
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$fac$>$} in C\+O\+RE.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for Fac\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_fac}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_fac_a0b370b278ac6f2830da14e7fb6fb15c4}\label{class_fac_a0b370b278ac6f2830da14e7fb6fb15c4}} 
+int {\bfseries get\+Value} () const
+\item 
+\mbox{\Hypertarget{class_fac_aa29314863b7653d6152fbdb6ee768adf}\label{class_fac_aa29314863b7653d6152fbdb6ee768adf}} 
+{\bfseries Fac} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context, bool Splits\+Context)
+\item 
+\mbox{\Hypertarget{class_fac_a15c287ee03124abc02bd6aa21b95e1a0}\label{class_fac_a15c287ee03124abc02bd6aa21b95e1a0}} 
+{\bfseries Fac} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context)
+\item 
+void \mbox{\hyperlink{class_fac_abf645b3e9acdc88dd83ed3dacf981c58}{Print}} (std\+::ostringstream \&X, unsigned Indent) override
+\item 
+void \mbox{\hyperlink{class_fac_a9448c1c51e8f79edce0ac7c7cda21c58}{Execute}} (\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&C) override
+\item 
+\mbox{\Hypertarget{class_fac_a89db7c42cf5302bd8aaf07dc299ef1fd}\label{class_fac_a89db7c42cf5302bd8aaf07dc299ef1fd}} 
+\mbox{\hyperlink{class_token}{Token}} {\bfseries get\+Token} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_fac_a3d11351ed8e529e021430080a0aa2f3f}\label{class_fac_a3d11351ed8e529e021430080a0aa2f3f}} 
+static bool {\bfseries can\+Parse} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$fac$>$} in C\+O\+RE. 
+
+This will be the express part of a factor but since \mbox{\hyperlink{class_exp}{Exp}} is not yet declared we do not have the full type information for it so C++ will complain that it is not safe to destroy it. The value of a factor to be properly set after it is interpreted. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_fac_a9448c1c51e8f79edce0ac7c7cda21c58}\label{class_fac_a9448c1c51e8f79edce0ac7c7cda21c58}} 
+\index{Fac@{Fac}!Execute@{Execute}}
+\index{Execute@{Execute}!Fac@{Fac}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void Fac\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes / evaluates the node. 
+\begin{DoxyParams}{Parameters}
+{\em C} & the context against which the node will execute / evaluate for. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a27ad1ba81d2596817b361368282bcbfa}{Node}}.
+
+\mbox{\Hypertarget{class_fac_abf645b3e9acdc88dd83ed3dacf981c58}\label{class_fac_abf645b3e9acdc88dd83ed3dacf981c58}} 
+\index{Fac@{Fac}!Print@{Print}}
+\index{Print@{Print}!Fac@{Fac}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Fac\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostringstream \&}]{X,  }\item[{unsigned}]{Indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pretty print the node back to the source language. 
+\begin{DoxyParams}{Parameters}
+{\em X} & the stream which to append to. \\
+\hline
+{\em Indent} & the level of indent to print at in the stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a5325b760a6e6fe94227c0cff53af2c45}{Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/Node.\+h\end{DoxyCompactItemize}

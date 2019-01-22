@@ -1,0 +1,84 @@
+\hypertarget{class_prog}{}\section{Prog Class Reference}
+\label{class_prog}\index{Prog@{Prog}}
+
+
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$prog$>$} in C\+O\+RE.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for Prog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_prog}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_prog_a4b4d0f98bcbe2ba59652b44341fe897c}\label{class_prog_a4b4d0f98bcbe2ba59652b44341fe897c}} 
+{\bfseries Prog} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context, bool Splits\+Context)
+\item 
+\mbox{\Hypertarget{class_prog_a387a0b1f34c7ecd03a517d522993e29e}\label{class_prog_a387a0b1f34c7ecd03a517d522993e29e}} 
+{\bfseries Prog} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context)
+\item 
+void \mbox{\hyperlink{class_prog_aadfb046d4096b256eea11e3171b8d399}{Print}} (std\+::ostringstream \&X, unsigned Indent) override
+\item 
+void \mbox{\hyperlink{class_prog_afd95e341f8003d6b5fe6369af3b8975b}{Execute}} (\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&C) override
+\item 
+\mbox{\Hypertarget{class_prog_ada1f83c5b7ea84a4dcd4eb5dbf833267}\label{class_prog_ada1f83c5b7ea84a4dcd4eb5dbf833267}} 
+\mbox{\hyperlink{class_token}{Token}} {\bfseries get\+Token} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_prog_a04ee2af6f860b8533f9c6936d9735abd}\label{class_prog_a04ee2af6f860b8533f9c6936d9735abd}} 
+static bool {\bfseries can\+Parse} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$prog$>$} in C\+O\+RE. 
+
+The string of decleration sequences parsed by the program. This should not be null after initialization. The string of statement sequences parsed by the program. This should not be null after initialization. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_prog_afd95e341f8003d6b5fe6369af3b8975b}\label{class_prog_afd95e341f8003d6b5fe6369af3b8975b}} 
+\index{Prog@{Prog}!Execute@{Execute}}
+\index{Execute@{Execute}!Prog@{Prog}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void Prog\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes / evaluates the node. 
+\begin{DoxyParams}{Parameters}
+{\em C} & the context against which the node will execute / evaluate for. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a27ad1ba81d2596817b361368282bcbfa}{Node}}.
+
+\mbox{\Hypertarget{class_prog_aadfb046d4096b256eea11e3171b8d399}\label{class_prog_aadfb046d4096b256eea11e3171b8d399}} 
+\index{Prog@{Prog}!Print@{Print}}
+\index{Print@{Print}!Prog@{Prog}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Prog\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostringstream \&}]{X,  }\item[{unsigned}]{Indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pretty print the node back to the source language. 
+\begin{DoxyParams}{Parameters}
+{\em X} & the stream which to append to. \\
+\hline
+{\em Indent} & the level of indent to print at in the stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a5325b760a6e6fe94227c0cff53af2c45}{Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/Node.\+h\end{DoxyCompactItemize}

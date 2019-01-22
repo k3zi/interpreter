@@ -1,0 +1,7 @@
+---
+BasedOnStyle: LLVM
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: true
+ReflowComments: true
+ColumnLimit: 80
+...

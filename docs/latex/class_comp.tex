@@ -1,0 +1,87 @@
+\hypertarget{class_comp}{}\section{Comp Class Reference}
+\label{class_comp}\index{Comp@{Comp}}
+
+
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$comp$>$} in C\+O\+RE.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for Comp\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_comp}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_comp_a30263f2c50135068e3d5a32775a6bfd0}\label{class_comp_a30263f2c50135068e3d5a32775a6bfd0}} 
+bool {\bfseries get\+Value} () const
+\item 
+\mbox{\Hypertarget{class_comp_a3726f4db1126aca11dd1ab8162a5851b}\label{class_comp_a3726f4db1126aca11dd1ab8162a5851b}} 
+{\bfseries Comp} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context, bool Splits\+Context)
+\item 
+\mbox{\Hypertarget{class_comp_a8770feb5e001e7361328aa01f71775d8}\label{class_comp_a8770feb5e001e7361328aa01f71775d8}} 
+{\bfseries Comp} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P, class \mbox{\hyperlink{class_stmt_seq}{Stmt\+Seq}} $\ast$Seq\+Context)
+\item 
+void \mbox{\hyperlink{class_comp_abc0e0fdd3a8963d5d60017c38765d0b4}{Print}} (std\+::ostringstream \&X, unsigned Indent) override
+\item 
+void \mbox{\hyperlink{class_comp_a3f6905eb5b4ed784a458070315fee5a1}{Execute}} (\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&C) override
+\item 
+\mbox{\Hypertarget{class_comp_af05663b1e946a2104febdb46f24608fe}\label{class_comp_af05663b1e946a2104febdb46f24608fe}} 
+\mbox{\hyperlink{class_token}{Token}} {\bfseries get\+Token} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_comp_a0ce1bfe63ccdde9b167b1091304a4d7d}\label{class_comp_a0ce1bfe63ccdde9b167b1091304a4d7d}} 
+static bool {\bfseries can\+Parse} (\mbox{\hyperlink{class_parser}{Parser}} $\ast$P)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_node}{Node}} class representing {\ttfamily $<$comp$>$} in C\+O\+RE. 
+
+The value of a condition to be properly set after it is interpreted. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_comp_a3f6905eb5b4ed784a458070315fee5a1}\label{class_comp_a3f6905eb5b4ed784a458070315fee5a1}} 
+\index{Comp@{Comp}!Execute@{Execute}}
+\index{Execute@{Execute}!Comp@{Comp}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void Comp\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_s_t_context}{A\+S\+T\+Context}} \&}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes / evaluates the node. 
+\begin{DoxyParams}{Parameters}
+{\em C} & the context against which the node will execute / evaluate for. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a27ad1ba81d2596817b361368282bcbfa}{Node}}.
+
+\mbox{\Hypertarget{class_comp_abc0e0fdd3a8963d5d60017c38765d0b4}\label{class_comp_abc0e0fdd3a8963d5d60017c38765d0b4}} 
+\index{Comp@{Comp}!Print@{Print}}
+\index{Print@{Print}!Comp@{Comp}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Comp\+::\+Print (\begin{DoxyParamCaption}\item[{std\+::ostringstream \&}]{X,  }\item[{unsigned}]{Indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pretty print the node back to the source language. 
+\begin{DoxyParams}{Parameters}
+{\em X} & the stream which to append to. \\
+\hline
+{\em Indent} & the level of indent to print at in the stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_node_a5325b760a6e6fe94227c0cff53af2c45}{Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\+A\+S\+T/Node.\+h\end{DoxyCompactItemize}
