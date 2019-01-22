@@ -268,7 +268,7 @@ unsigned Tokenizer::nextReservedToken(std::string tokenString) {
   return tokenString.size();
 }
 
-// Identifier = /[0-9]+/ where the entire length doesn't exceed
+// Identifier = /0|[1-9][0-9]*/ where the entire length doesn't exceed
 // `IntegerMaxLength`.
 unsigned Tokenizer::nextInteger(std::string tokenString) {
   assert(isdigit(tokenString.at(0))
@@ -292,6 +292,15 @@ unsigned Tokenizer::nextInteger(std::string tokenString) {
     error << "Illegal integer: \"";
     error << tokenString;
     error << "\". May not contain non-digit characters.";
+    throw error.str();
+  }
+
+  // Integers can't start with 0 (except 0).
+  if (tokenString.length() > 1 && tokenString.at(0) == '0') {
+    std::ostringstream error;
+    error << "Illegal integer: \"";
+    error << tokenString;
+    error << "\". May not contain leading zeros.";
     throw error.str();
   }
 

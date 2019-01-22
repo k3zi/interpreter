@@ -64,7 +64,7 @@ Class Structure:
         processing. Incremented on line breaks. Line 1 is considered the first
         line. Counting starts from 1. Not 0.
       - ColumnNumber (unsigned): The column number that the tokenizer is
-        processing. Resets on line breaks. Incremenets on character
+        processing. Resets on line breaks. Increments on character
         consumption. Column 1 is considered the first column. Counting starts
         from 1. Not 0.
       - nextIdentifier ((std::string) -> unsigned): Processes the next
@@ -79,7 +79,7 @@ Class Structure:
             characters are non-digits. Ex: ABC123X.
           - The resulting identifier exceeds `IdentifierMaxLength`
         Returns: The number of characters consumed. AKA The resultant token's
-          ength.
+          length.
       - nextReservedToken ((std::string) -> unsigned): Processes the next
         reserved token from the file stream. The passed in `tokenString` must
         contain a single lowercase character. Reserved Token Format = [a-z]+
@@ -103,7 +103,7 @@ Class Structure:
           token's length.
       - consumeToken (() -> void): Internal method that retrieves the next
         token from the file stream. Is called by public member `nextToken` and
-        utilises: `nextIdentifier`, `nextInteger`, and `nextIdentifier`.
+        utilizes: `nextIdentifier`, `nextInteger`, and `nextIdentifier`.
     - Public Members
       - `Constructor` ((std::string) -> Tokenizer): The only constructor for
         the Tokenizer. Takes in a file path to a CORE source file and opens a
@@ -116,14 +116,14 @@ Class Structure:
       - currentToken (() -> Token): Getter for the current token.
       - nextToken (() -> void): Retrieves the next token from the file stream.
         That token can then subsequently be read by calling
-        `Tokenizer::currentToken`. Handles error outputing (specifically line
+        `Tokenizer::currentToken`. Handles error outputting (specifically line
         numbers).
       - isEOF (() -> bool): Whether the tokenizer (and file stream) has reached
         the end of token output. End of file.
 
 Testing / Bugs:
   - Code was tested batch running against various valid and invalid CORE files
-    and comparing the output to manual calculations of the resultant token
+    and comparing the output to given calculations of the resultant token
     number stream; ensuring that code that was erroneous failed to produce a
     token stream and halted with a reasonable error description.
-  - As of this latest version no outsanding bugs are presenet.
+  - As of this latest version no outstanding bugs are present.

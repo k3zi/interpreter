@@ -66,11 +66,12 @@ class Tokenizer {
   // Processes the next integer token from the file stream. The passed in
   // `tokenString` must contain a single numeric character. This function
   // processes up to (but not including) a character that is non-alphanumeric.
-  // Identifier Format = [0-9]+
+  // Identifier Format = 0|[1-9][0-9]*
   // This function will throw if:
   //   - Any of the characters after the initial character are non-numeric
   //       Ex: 123c, 123ABC, 1x4, 45e8.
   //   - The resulting identifier exceeds `IntegerMaxLength`.
+  //   - Has leading zeros. Ex: 0001, 0000, 01234.
   // Returns: The number of characters consumed. AKA The resultant
   //   token's length.
   unsigned nextInteger(std::string tokenString);
