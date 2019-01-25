@@ -47,13 +47,15 @@ void Tokenizer::nextToken() {
 
 // Processes the next token character by character.
 void Tokenizer::consumeToken() {
+  // Use a while loop so we can skip over whitespace and handle end of line
+  // symbols.
   while (1) {
     // Get the next character.
     std::string tokenString;
     char tokenChar = FileStream.get();
     tokenString += tokenChar;
 
-    // Initialize here since switch can't bypasses variable initialization.
+    // Initialize here since switch can't bypass variable initialization.
     std::ostringstream error;
     unsigned charactersHandled = 0;
 
